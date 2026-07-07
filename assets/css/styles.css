@@ -63,21 +63,16 @@ a {
 }
 
 .brand {
-  gap: 10px;
-  min-width: 0;
-  font-weight: 750;
+  flex: 0 0 auto;
 }
 
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  flex: 0 0 34px;
-  border: 1px solid rgba(91, 213, 202, 0.5);
-  background: rgba(91, 213, 202, 0.12);
-  color: var(--teal);
-  font-weight: 800;
+.brand-logo {
+  display: block;
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
 }
 
 .nav-links {
@@ -870,8 +865,9 @@ h2 {
     padding: 14px 16px;
   }
 
-  .brand span:last-child {
-    display: none;
+  .brand-logo {
+    width: 42px;
+    height: 42px;
   }
 
   .nav-links {
