@@ -20,6 +20,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 86px;
+  overflow-x: hidden;
 }
 
 body {
@@ -1169,9 +1170,9 @@ h2 {
 
 .contact-flight-scene {
   position: absolute;
-  inset: -110px -12vw -130px;
+  inset: -110px 0 -130px;
   z-index: 0;
-  overflow: visible;
+  overflow: hidden;
   pointer-events: none;
   --contact-flight-duration: 6200ms;
 }
@@ -1502,7 +1503,7 @@ h2 {
   }
 
   .contact-flight-scene {
-    inset: -70px -10vw -90px;
+    inset: -70px 0 -90px;
     --contact-flight-duration: 7000ms;
   }
 
@@ -1513,10 +1514,11 @@ h2 {
   }
 
   .flight-trail {
-    left: -6%;
+    left: 0;
     top: clamp(245px, 52%, 360px);
-    width: 112%;
+    width: 100%;
     height: clamp(150px, 27%, 220px);
+    overflow: hidden;
   }
 
   .paper-plane {
