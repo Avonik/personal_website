@@ -9,9 +9,35 @@
     >
     <title>Julian Hermes &middot; AI, Data & Automation</title>
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260707-logo">
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260708-typing">
   </head>
   <body>
+    <div class="opening-intro" aria-hidden="true">
+      <div class="intro-mark" aria-hidden="true">
+        <svg class="intro-monogram" viewBox="0 0 220 220" focusable="false">
+          <path
+            class="intro-j-main intro-stroke"
+            pathLength="1"
+            d="M162 44 C132 47 112 61 107 90 C102 120 108 154 91 180 C76 204 44 209 28 188 C15 170 27 144 50 143 C67 143 78 156 73 170 C69 181 55 184 47 177"
+          ></path>
+          <path
+            class="intro-j-swash intro-stroke"
+            pathLength="1"
+            d="M44 82 C56 47 106 42 151 44 C177 45 196 37 211 22"
+          ></path>
+          <path
+            class="intro-h-fill intro-fill intro-h-right"
+            d="M160 66 H197 C186 69 183 76 183 90 V177 C183 190 186 197 197 200 H160 C171 197 174 190 174 177 V90 C174 76 171 69 160 66 Z"
+          ></path>
+          <path
+            class="intro-cross intro-stroke"
+            pathLength="1"
+            d="M84 142 C111 116 137 116 161 130 C175 138 187 138 198 128"
+          ></path>
+        </svg>
+      </div>
+    </div>
+
     <header class="site-header" aria-label="Primary navigation">
       <a class="brand" href="/" aria-label="juhermes.de home">
         <img class="brand-logo" src="assets/img/jh-logo.png" width="54" height="54" alt="juhermes.de">
@@ -26,12 +52,12 @@
 
     <main>
       <section class="hero" aria-labelledby="hero-title">
+        <canvas class="hero-network" aria-hidden="true"></canvas>
         <img
-          class="hero-image"
+          class="hero-image hero-image-fallback"
           src="assets/img/hero-workspace.png"
           alt=""
           decoding="async"
-          fetchpriority="high"
         >
         <div class="hero-scrim" aria-hidden="true"></div>
         <div class="hero-content">
@@ -47,11 +73,17 @@
             M.Sc. Management & Data Science
           </p>
           <div class="hero-actions">
-            <a class="button button-secondary" href="https://github.com/Avonik">
-              GitHub
+            <a class="social-link" href="https://github.com/Avonik" aria-label="GitHub profile">
+              <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 2C6.48 2 2 6.58 2 12.22c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.49 0-.24-.01-1.04-.01-1.88-2.51.47-3.16-.63-3.36-1.21-.11-.3-.6-1.21-1.03-1.46-.35-.19-.85-.67-.01-.68.79-.01 1.35.74 1.54 1.05.9 1.54 2.34 1.1 2.91.84.09-.66.35-1.1.64-1.35-2.22-.26-4.55-1.13-4.55-5.02 0-1.11.39-2.02 1.03-2.73-.1-.26-.45-1.29.1-2.69 0 0 .84-.27 2.75 1.04A9.29 9.29 0 0 1 12 6.97c.85 0 1.7.12 2.5.34 1.91-1.31 2.75-1.04 2.75-1.04.55 1.4.2 2.43.1 2.69.64.71 1.03 1.62 1.03 2.73 0 3.9-2.34 4.76-4.57 5.02.36.32.68.93.68 1.89 0 1.36-.01 2.46-.01 2.8 0 .27.18.59.69.49A10.09 10.09 0 0 0 22 12.22C22 6.58 17.52 2 12 2Z"></path>
+              </svg>
+              <span>GitHub</span>
             </a>
-            <a class="button button-secondary" href="https://www.linkedin.com/in/julian-hermes">
-              LinkedIn
+            <a class="social-link" href="https://www.linkedin.com/in/julian-hermes" aria-label="LinkedIn profile">
+              <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M20.45 20.45h-3.56v-5.58c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.68H9.34V8.98h3.42v1.57h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29ZM5.32 7.41a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.04H3.53V8.98H7.1v11.47ZM22.22 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"></path>
+              </svg>
+              <span>LinkedIn</span>
             </a>
           </div>
         </div>
@@ -60,7 +92,18 @@
       <section class="profile-section" id="profile" aria-labelledby="profile-title">
         <div class="section-heading">
           <p class="eyebrow">Profile</p>
-          <h2 id="profile-title">I turn abstract problems into working systems.</h2>
+          <h2 id="profile-title" aria-label="I turn abstract problems into working systems.">
+            I turn abstract
+            <span
+              class="typing-word"
+              data-typo="prblems"
+              data-final="problems"
+              aria-hidden="true"
+            >
+              <span class="typing-word-text">prblems</span><span class="typing-cursor"></span>
+            </span>
+            into working systems.
+          </h2>
         </div>
         <div class="profile-layout">
           <p class="lead">
@@ -104,42 +147,76 @@
       <section class="experience-section" id="experience" aria-labelledby="experience-title">
         <div class="section-heading">
           <p class="eyebrow">Experience</p>
-          <h2 id="experience-title">Current work, studies, and proof points.</h2>
+          <h2 id="experience-title">Work, education, and volunteer work.</h2>
         </div>
-        <div class="timeline">
-          <article class="timeline-item">
-            <p class="timeline-date">June 2025 - today</p>
-            <div>
-              <h3>AI Engineer - Data Engineering & Workflow Automation</h3>
-              <p class="timeline-meta">Working Student &middot; forbeyond Group &middot; Hamburg</p>
-              <p>
-                Building LLM-supported workflows and AI agents to clean, match, transform, and
-                integrate structured and unstructured product data across systems.
-              </p>
+        <div class="experience-stack">
+          <div class="experience-group">
+            <div class="experience-group-heading">
+              <h3>Working experience</h3>
             </div>
-          </article>
-          <article class="timeline-item">
-            <p class="timeline-date">2025 - 2027</p>
-            <div>
-              <h3>M.Sc. Management & Data Science</h3>
-              <p class="timeline-meta">Leuphana University L&uuml;neburg</p>
-              <p>
-                Combining data science, management, and applied AI with student representation for
-                the Management & Data Science department.
-              </p>
+            <div class="timeline">
+              <article class="timeline-item">
+                <p class="timeline-date">June 2025 - today</p>
+                <div>
+                  <h3>AI Engineer - Data Engineering & Workflow Automation</h3>
+                  <p class="timeline-meta">Working Student &middot; forbeyond Group &middot; Hamburg</p>
+                  <p>
+                    Building LLM-supported workflows and AI agents to clean, match, transform, and
+                    integrate structured and unstructured product data across systems.
+                  </p>
+                </div>
+              </article>
             </div>
-          </article>
-          <article class="timeline-item">
-            <p class="timeline-date">2022 - 2025</p>
-            <div>
-              <h3>B.Sc. Information Systems</h3>
-              <p class="timeline-meta">Leuphana University L&uuml;neburg &middot; Grade 1.4 &middot; ECTS Grade A</p>
-              <p>
-                Major in Information Systems, minor in Business Psychology, with courses in AI and
-                ML, business intelligence, databases, IT security, SAP, and software design.
-              </p>
+          </div>
+
+          <div class="experience-group">
+            <div class="experience-group-heading">
+              <h3>Education</h3>
             </div>
-          </article>
+            <div class="timeline">
+              <article class="timeline-item">
+                <p class="timeline-date">2025 - 2027</p>
+                <div>
+                  <h3>M.Sc. Management & Data Science</h3>
+                  <p class="timeline-meta">Leuphana University L&uuml;neburg</p>
+                  <p>
+                    Combining data science, management, and applied AI with a focus on practical
+                    systems, data workflows, and organizational impact.
+                  </p>
+                </div>
+              </article>
+              <article class="timeline-item">
+                <p class="timeline-date">2022 - 2025</p>
+                <div>
+                  <h3>B.Sc. Information Systems</h3>
+                  <p class="timeline-meta">Leuphana University L&uuml;neburg &middot; Grade 1.4 &middot; ECTS Grade A</p>
+                  <p>
+                    Major in Information Systems, minor in Business Psychology, with courses in AI and
+                    ML, business intelligence, databases, IT security, SAP, and software design.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="experience-group">
+            <div class="experience-group-heading">
+              <h3>Volunteer work</h3>
+            </div>
+            <div class="timeline">
+              <article class="timeline-item">
+                <p class="timeline-date">May 2026 - today</p>
+                <div>
+                  <h3>Student Representative</h3>
+                  <p class="timeline-meta">M.Sc. Management & Data Science &middot; Leuphana University L&uuml;neburg</p>
+                  <p>
+                    Representing Management & Data Science students and supporting communication
+                    between the cohort, faculty, and program stakeholders.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -157,14 +234,37 @@
             <strong>TOEIC C1 &middot; 985/990</strong>
             <span>Professional English communication</span>
           </article>
-          <article>
-            <strong>Student Representative</strong>
-            <span>Representing M.Sc. Management & Data Science students</span>
-          </article>
         </div>
       </section>
 
       <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-flight-scene" aria-hidden="true">
+          <svg class="flight-trail" viewBox="0 0 1000 260" preserveAspectRatio="none" focusable="false">
+            <defs>
+              <mask id="contact-flight-trail-mask" maskUnits="userSpaceOnUse" x="-80" y="0" width="1160" height="260">
+                <path
+                  class="flight-trail-mask"
+                  pathLength="1"
+                  d="M -56 172 C 118 132 230 142 330 164 C 455 190 500 106 590 82 C 705 50 812 106 780 170 C 748 232 632 206 640 148 C 648 98 748 124 898 184"
+                ></path>
+              </mask>
+            </defs>
+            <path
+              class="flight-trail-path"
+              pathLength="1"
+              mask="url(#contact-flight-trail-mask)"
+              d="M -56 172 C 118 132 230 142 330 164 C 455 190 500 106 590 82 C 705 50 812 106 780 170 C 748 232 632 206 640 148 C 648 98 748 124 898 184"
+            ></path>
+          </svg>
+          <span class="paper-plane">
+            <span class="paper-plane-wing paper-plane-wing-top"></span>
+            <span class="paper-plane-wing paper-plane-wing-bottom"></span>
+          </span>
+          <span class="letterbox">
+            <span class="letterbox-flag"></span>
+            <span class="letterbox-door"></span>
+          </span>
+        </div>
         <div>
           <p class="eyebrow">Contact</p>
           <h2 id="contact-title">For recruiters, collaborators, and curious visitors.</h2>
@@ -192,6 +292,6 @@
       <a href="https://github.com/Avonik">github.com/Avonik</a>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=20260708-contact-flight"></script>
   </body>
 </html>
