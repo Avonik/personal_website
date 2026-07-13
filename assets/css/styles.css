@@ -567,7 +567,7 @@ h2 {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
 }
 
@@ -583,7 +583,7 @@ h2 {
   box-shadow: var(--shadow);
 }
 
-.project-card > :not(.weather-scene, .football-scene) {
+.project-card > :not(.weather-scene, .football-scene, .rail-scene) {
   position: relative;
   z-index: 1;
 }
@@ -791,6 +791,268 @@ h2 {
 
   70% {
     transform: translate3d(-8px, 0, 0);
+  }
+}
+
+.rail-scene {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.rail-glow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 58%;
+  background:
+    radial-gradient(circle at 74% 72%, rgba(119, 220, 232, 0.16), transparent 30%),
+    linear-gradient(to top, rgba(119, 220, 232, 0.08), rgba(119, 220, 232, 0));
+  opacity: 0;
+  transition: opacity 320ms ease;
+}
+
+.rail-route {
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  bottom: 65px;
+  height: 2px;
+  overflow: hidden;
+  background: rgba(119, 220, 232, 0.16);
+}
+
+.rail-route::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(119, 220, 232, 0.2), #77dce8 55%, rgba(240, 179, 90, 0.9));
+  box-shadow: 0 0 14px rgba(119, 220, 232, 0.42);
+  transform: translateX(-101%);
+}
+
+.rail-station {
+  position: absolute;
+  bottom: 59px;
+  width: 14px;
+  height: 14px;
+  background: var(--panel);
+  border: 2px solid rgba(119, 220, 232, 0.48);
+  border-radius: 999px;
+  opacity: 0.48;
+}
+
+.rail-station::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  background: #77dce8;
+  border-radius: inherit;
+  opacity: 0;
+  box-shadow: 0 0 12px rgba(119, 220, 232, 0.8);
+}
+
+.rail-station-one {
+  left: 26px;
+}
+
+.rail-station-two {
+  left: calc(50% - 7px);
+}
+
+.rail-station-three {
+  right: 26px;
+  border-color: rgba(240, 179, 90, 0.6);
+}
+
+.rail-station-three::after {
+  background: #f0b35a;
+  box-shadow: 0 0 12px rgba(240, 179, 90, 0.8);
+}
+
+.rail-train {
+  position: absolute;
+  left: 30px;
+  bottom: 61px;
+  width: 42px;
+  height: 18px;
+  background: #edf3f2;
+  border: 2px solid #edf3f2;
+  border-radius: 9px 4px 3px 3px;
+  box-shadow: 0 0 22px rgba(119, 220, 232, 0.28);
+  opacity: 0;
+  transform: translateX(-58px);
+}
+
+.rail-train::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  bottom: 2px;
+  height: 3px;
+  background: #77dce8;
+  border-radius: 2px;
+}
+
+.rail-train::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  bottom: -6px;
+  width: 6px;
+  height: 6px;
+  background: #606966;
+  border-radius: 50%;
+  box-shadow: 21px 0 #606966;
+}
+
+.rail-train-window {
+  position: absolute;
+  left: 8px;
+  top: 3px;
+  width: 22px;
+  height: 6px;
+  background: linear-gradient(90deg, #263d42 0 28%, transparent 29% 35%, #263d42 36% 64%, transparent 65% 71%, #263d42 72%);
+  border-radius: 3px 5px 2px 2px;
+}
+
+.rail-delay {
+  position: absolute;
+  top: 48px;
+  right: 28px;
+  padding: 3px 7px;
+  color: #18130b;
+  background: #f0b35a;
+  border-radius: 4px;
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  transform: translateY(6px) scale(0.92);
+  box-shadow: 0 5px 18px rgba(240, 179, 90, 0.25);
+}
+
+.project-card:hover .rail-glow,
+.project-card:focus-within .rail-glow {
+  opacity: 1;
+}
+
+.project-card:hover .rail-route::after,
+.project-card:focus-within .rail-route::after {
+  animation: rail-route-rank 1800ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.project-card:hover .rail-train,
+.project-card:focus-within .rail-train {
+  animation: rail-journey 1800ms cubic-bezier(0.45, 0, 0.2, 1) both;
+}
+
+.project-card:hover .rail-station::after,
+.project-card:focus-within .rail-station::after {
+  animation: rail-stop 1800ms ease both;
+}
+
+.project-card:hover .rail-station-two::after,
+.project-card:focus-within .rail-station-two::after {
+  animation-delay: 360ms;
+}
+
+.project-card:hover .rail-station-three::after,
+.project-card:focus-within .rail-station-three::after {
+  animation-delay: 760ms;
+}
+
+.project-card:hover .rail-delay,
+.project-card:focus-within .rail-delay {
+  animation: rail-delay-arrival 1800ms ease both;
+}
+
+@keyframes rail-route-rank {
+  0% {
+    transform: translateX(-101%);
+  }
+
+  68%,
+  86% {
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+}
+
+@keyframes rail-journey {
+  0% {
+    left: 30px;
+    opacity: 0;
+    transform: translateX(-58px);
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  44% {
+    left: 50%;
+    transform: translateX(-21px);
+  }
+
+  51% {
+    left: 50%;
+    transform: translateX(-21px);
+  }
+
+  88% {
+    left: calc(100% - 72px);
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    left: calc(100% - 72px);
+    opacity: 0;
+    transform: translateX(0);
+  }
+}
+
+@keyframes rail-stop {
+  0%,
+  10%,
+  100% {
+    opacity: 0;
+    transform: scale(0.65);
+  }
+
+  18%,
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  62% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes rail-delay-arrival {
+  0%,
+  64%,
+  100% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.92);
+  }
+
+  72%,
+  90% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -1660,6 +1922,14 @@ h2 {
   .project-card:focus-within .football-arc,
   .project-card:hover .football-ball,
   .project-card:focus-within .football-ball,
+  .project-card:hover .rail-route::after,
+  .project-card:focus-within .rail-route::after,
+  .project-card:hover .rail-train,
+  .project-card:focus-within .rail-train,
+  .project-card:hover .rail-station::after,
+  .project-card:focus-within .rail-station::after,
+  .project-card:hover .rail-delay,
+  .project-card:focus-within .rail-delay,
   .contact-section.is-flight-playing .contact-flight-scene::before,
   .contact-section.is-flight-playing .letterbox,
   .contact-section.is-flight-playing .letterbox-flag,
@@ -1685,7 +1955,15 @@ h2 {
   .project-card:hover .football-arc,
   .project-card:focus-within .football-arc,
   .project-card:hover .football-ball,
-  .project-card:focus-within .football-ball {
+  .project-card:focus-within .football-ball,
+  .project-card:hover .rail-route::after,
+  .project-card:focus-within .rail-route::after,
+  .project-card:hover .rail-train,
+  .project-card:focus-within .rail-train,
+  .project-card:hover .rail-station::after,
+  .project-card:focus-within .rail-station::after,
+  .project-card:hover .rail-delay,
+  .project-card:focus-within .rail-delay {
     opacity: 0.7;
     transform: none;
   }

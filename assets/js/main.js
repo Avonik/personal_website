@@ -8,6 +8,14 @@ const projects = [
     description: "A fine-tuned weather model for L&uuml;neburg that outperforms professional weather models for local forecasts.",
   },
   {
+    name: "OnPoint.",
+    url: "https://bahn.juhermes.de/",
+    status: "Live",
+    accent: "#77dce8",
+    scene: "rail",
+    description: "A route planner that tracks real train delays and ranks connections by expected journey time and transfer risk.",
+  },
+  {
     name: "Football Forecast",
     url: "",
     status: "Upcoming",
@@ -55,6 +63,18 @@ function createProjectCard(project) {
             <span class="football-arc"></span>
             <span class="football-ball"></span>
           </div>`
+        : project.scene === "rail"
+          ? `<div class="rail-scene" aria-hidden="true">
+              <span class="rail-glow"></span>
+              <span class="rail-route"></span>
+              <span class="rail-station rail-station-one"></span>
+              <span class="rail-station rail-station-two"></span>
+              <span class="rail-station rail-station-three"></span>
+              <span class="rail-train">
+                <span class="rail-train-window"></span>
+              </span>
+              <span class="rail-delay">+8 min</span>
+            </div>`
       : "";
 
   card.innerHTML = `
