@@ -20,6 +20,7 @@ const projects = [
     url: "https://spielraum.juhermes.de/",
     status: "Live",
     accent: "#f0b35a",
+    statusColor: "#4ade80",
     scene: "football",
     description: "A probabilistic model for predicting football games, built as a practical machine learning and uncertainty project.",
   },
@@ -81,7 +82,7 @@ function createProjectCard(project) {
     ${scene}
     <div class="project-topline">
       <span>${project.status}</span>
-      <span class="project-dot" aria-hidden="true"></span>
+      <span class="project-dot" style="--accent: ${project.statusColor || project.accent}" aria-hidden="true"></span>
     </div>
     <h3>${project.name}</h3>
     <p>${project.description}</p>
