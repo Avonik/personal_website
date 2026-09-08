@@ -17,8 +17,8 @@ const projects = [
   },
   {
     name: "Football Forecast",
-    url: "",
-    status: "Upcoming",
+    url: "https://spielraum.juhermes.de/",
+    status: "Live",
     accent: "#f0b35a",
     scene: "football",
     description: "A probabilistic model for predicting football games, built as a practical machine learning and uncertainty project.",
