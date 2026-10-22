@@ -20,13 +20,14 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 86px;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
   min-width: 320px;
-  overflow-x: hidden;
+  /* Clip decorative overflow without creating a second vertical scroller. */
+  overflow-x: clip;
   background: var(--bg);
   color: var(--text);
   font-family:
@@ -627,12 +628,17 @@ h2 {
 }
 
 .project-dot {
+  --status-color: #4ade80;
   width: 10px;
   height: 10px;
   flex: 0 0 10px;
-  background: var(--accent, var(--teal));
+  background: var(--status-color);
   border-radius: 999px;
-  box-shadow: 0 0 24px var(--accent, var(--teal));
+  box-shadow: 0 0 24px var(--status-color);
+}
+
+.project-card.is-muted .project-dot {
+  --status-color: var(--rose);
 }
 
 .project-card h4 {

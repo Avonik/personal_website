@@ -20,7 +20,6 @@ const liveProjects = [
     url: "https://spielraum.juhermes.de/",
     status: "Live",
     accent: "#f0b35a",
-    statusColor: "#4ade80",
     scene: "football",
     description: "A probabilistic model for predicting football games, built as a practical machine learning and uncertainty project.",
   },
@@ -53,7 +52,7 @@ const githubProjects = [
     url: "https://github.com/Avonik/ParliParla",
     status: "Hackathon · document AI",
     accent: "#5bd5ca",
-    description: "An Apertus-powered pipeline that turns Swiss parliamentary PDFs into a shared structured schema, with source quotes behind extracted values and evaluation across 18 parliaments.",
+    description: "An Apertus-powered pipeline that turns Swiss parliamentary PDFs into a shared structured schema, with source quotes behind extracted values and evaluation across 18 parliaments. Submitted to the Hack Apertus hackathon in October 2026.",
   },
   {
     name: "PDFChat",
@@ -108,7 +107,7 @@ function createProjectCard(project, isGithub = false) {
     ${scene}
     <div class="project-topline">
       <span>${project.status}</span>
-      <span class="project-dot" style="--accent: ${project.statusColor || project.accent}" aria-hidden="true"></span>
+      <span class="project-dot" aria-hidden="true"></span>
     </div>
     <h4>${project.name}</h4>
     <p>${project.description}</p>
