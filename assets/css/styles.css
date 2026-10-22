@@ -606,7 +606,7 @@ h2 {
   box-shadow: var(--shadow);
 }
 
-.project-card > :not(.weather-scene, .football-scene, .rail-scene) {
+.project-card > :not(.weather-scene, .football-scene, .rail-scene, .project-illustration) {
   position: relative;
   z-index: 1;
 }
@@ -673,6 +673,212 @@ h2 {
 .project-card p.project-release-note {
   margin-top: 34px;
   color: var(--muted);
+}
+
+.project-illustration {
+  position: absolute;
+  right: 14px;
+  bottom: 8px;
+  z-index: 0;
+  width: clamp(150px, 39%, 220px);
+  height: auto;
+  color: var(--accent);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.14;
+  pointer-events: none;
+  transition: opacity 240ms ease;
+}
+
+.project-card:is(:hover, :focus-within) .project-illustration {
+  opacity: 0.62;
+}
+
+.illustration-guide {
+  opacity: 0.25;
+}
+
+.pen-ink {
+  stroke-width: 2.4;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.writing-pen {
+  offset-distance: 0%;
+  offset-rotate: 0deg;
+  offset-anchor: 0px 0px;
+}
+
+.pen-barrel,
+.illustration-document {
+  fill: var(--panel);
+}
+
+.pen-highlight {
+  stroke: var(--text);
+  opacity: 0.6;
+}
+
+.pen-tip,
+.network-nodes circle,
+.parliament-seat,
+.agent-signal {
+  fill: currentColor;
+}
+
+.project-card:is(:hover, :focus-within) .pen-ink {
+  animation: pen-write 3200ms linear both;
+}
+
+.project-card:is(:hover, :focus-within) .writing-pen {
+  animation: pen-travel 3200ms linear both;
+}
+
+@keyframes pen-write {
+  0%, 8% { stroke-dashoffset: 1; }
+  85%, 100% { stroke-dashoffset: 0; }
+}
+
+@keyframes pen-travel {
+  0%, 8% { offset-distance: 0%; }
+  85%, 100% { offset-distance: 100%; }
+}
+
+.network-links {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  opacity: 0.65;
+}
+
+.anchor-halo {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0.35;
+}
+
+.project-card:is(:hover, :focus-within) .network-links {
+  animation: network-connect 1800ms ease-out both;
+}
+
+.project-card:is(:hover, :focus-within) .anchor-halo {
+  animation: anchor-pulse 2400ms ease-in-out both;
+}
+
+@keyframes network-connect {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes anchor-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.35; }
+  40% { transform: scale(1.35); opacity: 0.8; }
+  70% { transform: scale(1.1); opacity: 0.5; }
+}
+
+.parliament-seat {
+  opacity: 0.2;
+}
+
+.parliament-podium {
+  fill: var(--panel);
+}
+
+.parliament-speech {
+  opacity: 0;
+  fill: var(--panel);
+}
+
+.project-card:is(:hover, :focus-within) .parliament-seat {
+  animation: parliament-vote 650ms ease-out var(--seat-delay) both;
+}
+
+.project-card:is(:hover, :focus-within) .parliament-speech {
+  animation: parliament-debate 1200ms ease-out 650ms both;
+}
+
+@keyframes parliament-vote {
+  from { opacity: 0.2; }
+  to { opacity: 1; }
+}
+
+@keyframes parliament-debate {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.agent-route {
+  opacity: 0.4;
+}
+
+.agent-nodes circle {
+  fill: var(--panel);
+}
+
+.agent-signal {
+  offset-distance: 0%;
+  offset-anchor: 0px 0px;
+  opacity: 0;
+}
+
+.agent-signal-one {
+  offset-path: path("M38 30 H76 Q90 30 90 44 V65 H142");
+}
+
+.agent-signal-two {
+  offset-path: path("M38 65 H142");
+}
+
+.agent-signal-three {
+  offset-path: path("M38 100 H76 Q90 100 90 86 V65 H142");
+}
+
+.project-card:is(:hover, :focus-within) .agent-signal {
+  animation: agent-flow 1900ms ease-in-out both;
+}
+
+.project-card:is(:hover, :focus-within) .agent-signal-two {
+  animation-delay: 220ms;
+}
+
+.project-card:is(:hover, :focus-within) .agent-signal-three {
+  animation-delay: 440ms;
+}
+
+@keyframes agent-flow {
+  0% { offset-distance: 0%; opacity: 0; }
+  15%, 85% { opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .project-card .project-illustration {
+    opacity: 0.18;
+    transition: none;
+  }
+
+  .project-card .project-illustration * {
+    animation: none !important;
+  }
+
+  .project-card .pen-ink,
+  .project-card .network-links {
+    stroke-dashoffset: 0;
+  }
+
+  .project-card .writing-pen {
+    offset-distance: 100%;
+  }
+
+  .project-card .parliament-seat {
+    opacity: 1;
+  }
+
+  .project-card .parliament-speech {
+    opacity: 1;
+  }
 }
 
 .weather-scene {

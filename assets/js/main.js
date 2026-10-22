@@ -28,6 +28,7 @@ const liveProjects = [
     url: "",
     status: "Not yet public",
     accent: "#e46f6f",
+    scene: "patent",
     description: "A multi-agent research pipeline for assessing patent novelty. Public access is on hold during an active journal submission.",
   },
 ];
@@ -38,6 +39,7 @@ const githubProjects = [
     url: "https://github.com/Avonik/word-prediction-via-motion-data",
     status: "Hardware & deep learning",
     accent: "#77dce8",
+    scene: "pen",
     description: "Turning pen movements into words: a custom BLE pen streams IMU signals into a Conv–BiGRU–Transformer model with CTC decoding, without manually separating letters.",
   },
   {
@@ -45,6 +47,7 @@ const githubProjects = [
     url: "https://github.com/Avonik/A-Multi-Method-Approach-to-Identifying-Anchor-Papers-in-Research-Domains",
     status: "Bachelor thesis",
     accent: "#f0b35a",
+    scene: "papers",
     description: "Which papers shape a research field? My bachelor thesis combines LLM-based citation context analysis, citation graphs, and statistical models to identify influential anchor publications.",
   },
   {
@@ -52,6 +55,7 @@ const githubProjects = [
     url: "https://github.com/Avonik/ParliParla",
     status: "Hackathon · document AI",
     accent: "#5bd5ca",
+    scene: "parliament",
     description: "An Apertus-powered pipeline that turns Swiss parliamentary PDFs into a shared structured schema, with source quotes behind extracted values and evaluation across 18 parliaments. Submitted to the Hack Apertus hackathon in October 2026.",
   },
   {
@@ -62,6 +66,63 @@ const githubProjects = [
     description: "A document chatbot built with Gradio and LangChain. Ask questions about uploaded PDFs, switch language models, and extract structured JSON summaries from sustainability reports.",
   },
 ];
+
+const handwriting = "M22 78 L33 34 L25 65 Q43 42 39 62 L35 77 Q43 81 52 63 Q62 49 59 61 Q55 70 48 68 Q45 80 59 77 Q73 70 79 43 Q83 24 77 40 Q68 67 69 74 Q71 85 82 70 Q95 52 98 35 Q96 25 90 45 Q81 70 84 75 Q87 82 98 70 Q111 49 118 58 Q123 70 111 77 Q100 83 102 69 Q106 56 118 58 Q130 69 143 61";
+
+const parliamentSeats = [
+  { radius: 37, count: 7 },
+  { radius: 58, count: 11 },
+  { radius: 79, count: 15 },
+].flatMap(({ radius, count }, row) => Array.from({ length: count }, (_, seat) => {
+  const angle = Math.PI * (0.08 + (seat / (count - 1)) * 0.84);
+  return `<circle class="parliament-seat" cx="${(110 + radius * Math.cos(angle)).toFixed(2)}" cy="${(105 - radius * Math.sin(angle)).toFixed(2)}" r="3.5" style="--seat-delay: ${row * 160 + seat * 35}ms"/>`;
+})).join("");
+
+const researchScenes = {
+  pen: `<svg class="project-illustration pen-scene" viewBox="0 0 220 130" aria-hidden="true" focusable="false">
+    <path class="illustration-guide" d="M18 87 H179 M18 100 H152"/>
+    <path class="pen-ink" pathLength="1" d="${handwriting}"/>
+    <g class="writing-pen" style="offset-path: path('${handwriting}')">
+      <path class="pen-barrel" d="M0 0 L8 -25 Q10 -31 14 -29 Q18 -27 15 -22 L0 0 Z"/>
+      <path class="pen-highlight" d="M5 -10 L13 -25"/>
+      <path class="pen-tip" d="M0 0 L3 -8 L6 -6 Z"/>
+    </g>
+  </svg>`,
+  papers: `<svg class="project-illustration papers-scene" viewBox="0 0 220 130" aria-hidden="true" focusable="false">
+    <path class="network-links" pathLength="1" d="M107 66 L34 31 M107 66 L52 104 M107 66 L164 25 M107 66 L192 81 M107 66 L147 111 M34 31 L52 104 M34 31 L164 25 M164 25 L192 81 M192 81 L147 111 M52 104 L147 111"/>
+    <g class="network-nodes">
+      <circle cx="34" cy="31" r="4"/><circle cx="52" cy="104" r="4"/>
+      <circle cx="164" cy="25" r="4"/><circle cx="192" cy="81" r="4"/><circle cx="147" cy="111" r="4"/>
+    </g>
+    <circle class="anchor-halo" cx="107" cy="66" r="24"/>
+    <g class="anchor-paper">
+      <path class="illustration-document" d="M96 48 H111 L120 57 V84 H96 Z"/>
+      <path class="document-fold" d="M111 48 V57 H120 M101 64 H114 M101 70 H114 M101 76 H109"/>
+    </g>
+  </svg>`,
+  parliament: `<svg class="project-illustration parliament-scene" viewBox="0 0 220 130" aria-hidden="true" focusable="false">
+    <path class="illustration-guide" d="M23 105 A87 87 0 0 1 197 105 M70 109 H150"/>
+    ${parliamentSeats}
+    <g class="parliament-podium">
+      <path d="M96 100 H124 L120 116 H100 Z M110 100 V90 Q110 85 116 85"/>
+    </g>
+    <g class="parliament-speech">
+      <path d="M131 50 H178 Q184 50 184 56 V72 Q184 78 178 78 H148 L139 86 V78 H131 Q125 78 125 72 V56 Q125 50 131 50 Z"/>
+      <path d="M136 61 H173 M136 68 H162"/>
+    </g>
+  </svg>`,
+  patent: `<svg class="project-illustration patent-scene" viewBox="0 0 220 130" aria-hidden="true" focusable="false">
+    <path class="agent-route" d="M38 30 H76 Q90 30 90 44 V65 H142 M38 65 H142 M38 100 H76 Q90 100 90 86 V65"/>
+    <g class="agent-nodes"><circle cx="38" cy="30" r="8"/><circle cx="38" cy="65" r="8"/><circle cx="38" cy="100" r="8"/></g>
+    <circle class="agent-signal agent-signal-one" r="3"/>
+    <circle class="agent-signal agent-signal-two" r="3"/>
+    <circle class="agent-signal agent-signal-three" r="3"/>
+    <g class="patent-document">
+      <path class="illustration-document" d="M142 41 H168 L181 54 V92 H142 Z"/>
+      <path class="document-fold" d="M168 41 V54 H181 M150 64 H172 M150 72 H172 M150 80 H162"/>
+    </g>
+  </svg>`,
+};
 
 function createProjectCard(project, isGithub = false) {
   const card = document.createElement("article");
@@ -101,7 +162,7 @@ function createProjectCard(project, isGithub = false) {
               </span>
               <span class="rail-delay">+8 min</span>
             </div>`
-      : "";
+      : researchScenes[project.scene] || "";
 
   card.innerHTML = `
     ${scene}
