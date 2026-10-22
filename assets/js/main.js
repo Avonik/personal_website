@@ -1,4 +1,4 @@
-const projects = [
+const liveProjects = [
   {
     name: "Weather Prediction",
     url: "https://wetter.juhermes.de",
@@ -25,30 +25,56 @@ const projects = [
     description: "A probabilistic model for predicting football games, built as a practical machine learning and uncertainty project.",
   },
   {
-    name: "Automation Lab",
+    name: "Multi-Agent Patent Novelty Assessment Pipeline",
     url: "",
-    status: "In progress",
+    status: "Not yet public",
     accent: "#e46f6f",
-    description: "A reserved spot for agentic AI, workflow automation, and data-tool experiments as they become shareable.",
+    description: "A multi-agent research pipeline for assessing patent novelty. Public access is on hold during an active journal submission.",
   },
 ];
 
-const grid = document.querySelector("#project-grid");
+const githubProjects = [
+  {
+    name: "IMU Pen — Handwriting Recognition",
+    url: "https://github.com/Avonik/word-prediction-via-motion-data",
+    status: "Hardware & deep learning",
+    accent: "#77dce8",
+    description: "Turning pen movements into words: a custom BLE pen streams IMU signals into a Conv–BiGRU–Transformer model with CTC decoding, without manually separating letters.",
+  },
+  {
+    name: "Finding Anchor Papers",
+    url: "https://github.com/Avonik/A-Multi-Method-Approach-to-Identifying-Anchor-Papers-in-Research-Domains",
+    status: "Bachelor thesis",
+    accent: "#f0b35a",
+    description: "Which papers shape a research field? My bachelor thesis combines LLM-based citation context analysis, citation graphs, and statistical models to identify influential anchor publications.",
+  },
+  {
+    name: "ParliParla",
+    url: "https://github.com/Avonik/ParliParla",
+    status: "Hackathon · document AI",
+    accent: "#5bd5ca",
+    description: "An Apertus-powered pipeline that turns Swiss parliamentary PDFs into a shared structured schema, with source quotes behind extracted values and evaluation across 18 parliaments.",
+  },
+  {
+    name: "PDFChat",
+    url: "https://github.com/Avonik/PDFChat",
+    status: "University project · LLMs",
+    accent: "#c4a0ef",
+    description: "A document chatbot built with Gradio and LangChain. Ask questions about uploaded PDFs, switch language models, and extract structured JSON summaries from sustainability reports.",
+  },
+];
 
-function createProjectCard(project) {
+function createProjectCard(project, isGithub = false) {
   const card = document.createElement("article");
   card.className = `project-card${project.url ? "" : " is-muted"}`;
   card.style.setProperty("--accent", project.accent);
 
   const action = project.url
-    ? `<a class="project-link" href="${project.url}">
-        Open project
+    ? `<a class="project-link" href="${project.url}" aria-label="${isGithub ? "View on GitHub" : "Open project"}: ${project.name}">
+        ${isGithub ? "View on GitHub" : "Open project"}
         <span aria-hidden="true">&rarr;</span>
       </a>`
-    : `<div class="project-link" aria-label="Coming soon">
-        Coming soon
-        <span aria-hidden="true">&rarr;</span>
-      </div>`;
+    : `<p class="project-link project-release-note">Demo &amp; code coming later</p>`;
   const scene =
     project.scene === "weather"
       ? `<div class="weather-scene" aria-hidden="true">
@@ -84,7 +110,7 @@ function createProjectCard(project) {
       <span>${project.status}</span>
       <span class="project-dot" style="--accent: ${project.statusColor || project.accent}" aria-hidden="true"></span>
     </div>
-    <h3>${project.name}</h3>
+    <h4>${project.name}</h4>
     <p>${project.description}</p>
     ${action}
   `;
@@ -92,8 +118,15 @@ function createProjectCard(project) {
   return card;
 }
 
-if (grid) {
-  grid.replaceChildren(...projects.map(createProjectCard));
+const liveGrid = document.querySelector("#project-grid");
+const githubGrid = document.querySelector("#github-project-grid");
+
+if (liveGrid) {
+  liveGrid.replaceChildren(...liveProjects.map((project) => createProjectCard(project)));
+}
+
+if (githubGrid) {
+  githubGrid.replaceChildren(...githubProjects.map((project) => createProjectCard(project, true)));
 }
 
 const year = document.querySelector("#year");

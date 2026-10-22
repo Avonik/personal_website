@@ -565,6 +565,28 @@ h2 {
   margin-bottom: 14px;
 }
 
+.project-group + .project-group {
+  margin-top: 48px;
+  padding-top: 36px;
+  border-top: 1px solid var(--line);
+}
+
+.project-group-heading {
+  max-width: 760px;
+  margin-bottom: 22px;
+}
+
+.project-group-heading h3 {
+  margin: 0;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  line-height: 1.3;
+}
+
+.project-group-heading p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -613,7 +635,7 @@ h2 {
   box-shadow: 0 0 24px var(--accent, var(--teal));
 }
 
-.project-card h3 {
+.project-card h4 {
   margin: 36px 0 0;
   font-size: 1.6rem;
   line-height: 1.1;
@@ -640,6 +662,11 @@ h2 {
 
 .project-card.is-muted .project-link {
   color: var(--soft);
+}
+
+.project-card p.project-release-note {
+  margin-top: 34px;
+  color: var(--muted);
 }
 
 .weather-scene {
