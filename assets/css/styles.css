@@ -307,8 +307,7 @@ h2 span { color: var(--muted); }
   .experience-group-heading h3 { font-size: 0.9375rem; font-weight: 600; }
   .timeline-item { grid-template-columns: 1fr; gap: 10px; padding-bottom: 25px; margin-bottom: 25px; }
   .timeline-item h3 { font-size: 1.1875rem; }
-  .timeline-item div > p:not(.timeline-meta) + p { margin-top: 12px; }
-.timeline-item div > p { font-size: 0.9375rem; }
+  .timeline-item div > p { font-size: 0.9375rem; }
   .timeline-date { font-size: 0.75rem; }
   .credentials-section { grid-template-columns: 1fr; gap: 14px; padding-block: 0 65px; }
   .credentials-section strong { font-size: 1rem; }
