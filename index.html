@@ -10,8 +10,8 @@
    Julian Hermes &middot; AI, Data &amp; Automation
   </title>
   <link href="assets/img/favicon.svg" rel="icon" type="image/svg+xml"/>
-  <link href="assets/css/styles.css?v=apple-1" rel="stylesheet"/>
-  <script defer="" src="assets/js/main.js?v=apple-1">
+  <link href="assets/css/styles.css?v=apple-2" rel="stylesheet"/>
+  <script defer="" src="assets/js/main.js?v=apple-2">
   </script>
  </head>
  <body>
@@ -51,128 +51,454 @@
   <main id="main">
    <section aria-labelledby="hero-title" class="hero">
     <div class="hero-intro">
-     <p class="eyebrow">
-      <span class="status-dot">
-      </span>
-      AI, DATA &amp; A LITTLE CURIOSITY
+     <p class="hero-kicker">
+      Julian Hermes
      </p>
      <h1 id="hero-title">
-      Complex problems.
-      <br/>
-      <span>
-       Useful possibilities.
-      </span>
+      AI. Data.
+      <br class="mobile-break"/>
+      Made useful.
      </h1>
      <p class="hero-copy">
-      Hi, I&rsquo;m Julian. I turn data, AI, and ideas into systems that work.
-      <br class="desktop-break"/>
-      Studying Management &amp; Data Science. Building what comes next.
+      A curious mind. An engineering mindset.
+      <br/>
+      Turning complex problems into working software.
      </p>
      <div class="hero-actions">
       <a class="button button-primary" href="#projects">
        Explore my work
-       <span aria-hidden="true">
-        &darr;
-       </span>
       </a>
-      <a class="text-link" href="#profile">
-       A little about me
-       <span aria-hidden="true">
+      <a class="button button-outline" href="#profile">
+       Get to know me
+      </a>
+     </div>
+    </div>
+    <div aria-label="Screenshots of my self-hosted weather forecasting, rail planning, and football prediction projects" class="project-stage" role="img">
+     <div class="stage-window stage-rail">
+      <div class="window-bar">
+       <span class="window-dots">
+       </span>
+       <span>
+        OnPoint.
+       </span>
+      </div>
+      <img alt="" height="630" src="assets/img/onpoint-preview.jpg" width="600"/>
+     </div>
+     <div class="stage-window stage-weather">
+      <div class="window-bar">
+       <span class="window-dots">
+       </span>
+       <span>
+        wetter.juhermes.de
+       </span>
+       <span aria-hidden="true" class="window-lock">
         &nearrow;
        </span>
-      </a>
+      </div>
+      <img alt="" fetchpriority="high" height="712" src="assets/img/weather-preview.jpg" width="1280"/>
+     </div>
+     <div class="stage-window stage-football">
+      <div class="window-bar">
+       <span class="window-dots">
+       </span>
+       <span>
+        Spielraum
+       </span>
+      </div>
+      <img alt="" height="712" src="assets/img/football-preview.jpg" width="1280"/>
      </div>
     </div>
-    <div aria-label="From raw data through intelligence to useful outcomes" class="system-scene" role="img">
-     <div class="scene-line">
-     </div>
-     <div class="system-card input-card">
-      <span class="mini-label">
-       01 / THE INPUT
-      </span>
-      <div class="data-stack">
-       <i>
-       </i>
-       <i>
-       </i>
-       <i>
-       </i>
-      </div>
-      <strong>
-       A world of data.
-      </strong>
-      <span>
-       Messy. Complex. Full of potential.
-      </span>
-     </div>
-     <div class="system-card intelligence-card">
-      <div class="intelligence-icon">
-       <svg aria-hidden="true" viewbox="0 0 64 64">
-        <path d="M32 8v48M8 32h48M15 15l34 34M15 49l34-34">
-        </path>
-        <circle cx="32" cy="32" r="15">
-        </circle>
-       </svg>
-      </div>
-      <span class="mini-label">
-       02 / THE CURIOSITY
-      </span>
-      <strong>
-       Make it click.
-      </strong>
-      <span>
-       AI + engineering + a human perspective.
-      </span>
-     </div>
-     <div class="system-card output-card">
-      <span class="mini-label">
-       03 / THE OUTCOME
-      </span>
-      <div class="output-icon">
-       <svg aria-hidden="true" viewbox="0 0 64 64">
-        <path d="M16 34l10 10 23-25">
-        </path>
-       </svg>
-      </div>
-      <strong>
-       Something useful.
-      </strong>
-      <span>
-       Built to leave the notebook.
-      </span>
-     </div>
-     <span class="scene-note note-one">
-      Python
-     </span>
-     <span class="scene-note note-two">
-      Agentic AI
-     </span>
-     <span class="scene-note note-three">
-      Real-world impact
-     </span>
-    </div>
+    <p class="stage-caption">
+     Built with curiosity. Running on my Raspberry Pi.
+    </p>
     <div class="hero-footnote">
+     <span>
+      AI Engineer at forbeyond
+     </span>
+     <span>
+      M.Sc. Management &amp; Data Science
+     </span>
      <span>
       L&uuml;neburg, Germany
      </span>
-     <span>
-      AI Engineer @ forbeyond
-     </span>
-     <span>
-      M.Sc. @ Leuphana University
-     </span>
+    </div>
+   </section>
+   <section aria-labelledby="projects-title" class="projects-section" id="projects">
+    <div class="section-shell">
+     <div class="projects-heading">
+      <div>
+       <h2 id="projects-title">
+        The projects.
+        <span>
+         From an idea to something you can use.
+        </span>
+       </h2>
+      </div>
+      <a class="text-link" href="https://github.com/Avonik">
+       All repositories &nearrow;
+      </a>
+     </div>
+     <div class="project-toolbar">
+      <div aria-label="Filter projects" class="project-filters" role="group">
+       <button aria-controls="project-grid" aria-pressed="true" data-filter="all" type="button">
+        All work
+        <span>
+         8
+        </span>
+       </button>
+       <button aria-controls="project-grid" aria-pressed="false" data-filter="live" type="button">
+        Live demos
+        <span>
+         3
+        </span>
+       </button>
+       <button aria-controls="project-grid" aria-pressed="false" data-filter="research" type="button">
+        Research &amp; code
+        <span>
+         5
+        </span>
+       </button>
+      </div>
+      <p aria-live="polite" class="project-count">
+       8 projects to explore
+      </p>
+     </div>
+     <div class="project-grid" id="project-grid">
+      <article class="project-card weather-card" data-category="live">
+       <div class="project-content">
+        <p class="project-category">
+         <span class="status-dot">
+         </span>
+         Live demo
+        </p>
+        <h3>
+         Weather Prediction
+        </h3>
+        <p class="project-description">
+         A fine-tuned weather model for L&uuml;neburg that outperforms professional weather models for local forecasts.
+        </p>
+        <a class="project-link" href="https://wetter.juhermes.de">
+         Explore project
+         <span aria-hidden="true">
+          &rsaquo;
+         </span>
+         <span class="sr-only">
+          : Weather Prediction
+         </span>
+        </a>
+       </div>
+       <div aria-hidden="true" class="project-art">
+        <div class="preview-browser">
+         <div class="preview-bar">
+          <span>
+          </span>
+          <span>
+          </span>
+          <span>
+          </span>
+         </div>
+         <img alt="" height="712" loading="lazy" src="assets/img/weather-preview.jpg" width="1280"/>
+        </div>
+       </div>
+      </article>
+      <article class="project-card rail-card" data-category="live">
+       <div class="project-content">
+        <p class="project-category">
+         <span class="status-dot">
+         </span>
+         Live demo
+        </p>
+        <h3>
+         OnPoint.
+        </h3>
+        <p class="project-description">
+         A route planner that tracks real train delays and ranks connections by expected journey time and transfer risk.
+        </p>
+        <a class="project-link" href="https://bahn.juhermes.de/">
+         Explore project
+         <span aria-hidden="true">
+          &rsaquo;
+         </span>
+         <span class="sr-only">
+          : OnPoint.
+         </span>
+        </a>
+       </div>
+       <div aria-hidden="true" class="project-art">
+        <div class="rail-product">
+         <div class="rail-product-track">
+         </div>
+         <div class="rail-product-train">
+          <span>
+          </span>
+          <span>
+          </span>
+          <span>
+          </span>
+          <span>
+          </span>
+          <span>
+          </span>
+          <span>
+          </span>
+         </div>
+         <span class="rail-product-a">
+          A
+         </span>
+         <span class="rail-product-b">
+          B
+         </span>
+         <span class="rail-product-caption">
+          A little less guesswork.
+          <br/>
+          A better connection.
+         </span>
+        </div>
+       </div>
+      </article>
+      <article class="project-card football-card" data-category="live">
+       <div class="project-content">
+        <p class="project-category">
+         <span class="status-dot">
+         </span>
+         Live demo
+        </p>
+        <h3>
+         Football Forecast
+        </h3>
+        <p class="project-description">
+         A probabilistic model for predicting football games, built as a practical machine learning and uncertainty project.
+        </p>
+        <a class="project-link" href="https://spielraum.juhermes.de/">
+         Explore project
+         <span aria-hidden="true">
+          &rsaquo;
+         </span>
+         <span class="sr-only">
+          : Football Forecast
+         </span>
+        </a>
+       </div>
+       <div aria-hidden="true" class="project-art">
+        <div class="preview-browser">
+         <div class="preview-bar">
+          <span>
+          </span>
+          <span>
+          </span>
+          <span>
+          </span>
+         </div>
+         <img alt="" height="712" loading="lazy" src="assets/img/football-preview.jpg" width="1280"/>
+        </div>
+       </div>
+      </article>
+      <article class="project-card pen-card" data-category="research">
+       <div class="project-content">
+        <p class="project-category">
+         Hardware &amp; deep learning
+        </p>
+        <h3>
+         IMU Pen &mdash; Handwriting Recognition
+        </h3>
+        <p class="project-description">
+         Turning pen movements into words: a custom BLE pen streams IMU signals into a Conv&ndash;BiGRU&ndash;Transformer model with CTC decoding, without manually separating letters.
+        </p>
+        <a class="project-link" href="https://github.com/Avonik/word-prediction-via-motion-data">
+         View on GitHub
+         <span aria-hidden="true">
+          &rsaquo;
+         </span>
+         <span class="sr-only">
+          : IMU Pen &mdash; Handwriting Recognition
+         </span>
+        </a>
+       </div>
+       <div aria-hidden="true" class="project-art">
+        <svg class="research-art pen-art" viewBox="0 0 360 170">
+         <path class="guide" d="M40 128H320">
+         </path>
+         <path class="ink" d="M58 120l19-70-8 52q32-37 22 7t31-14q-24 41 5 22l35-62q12-30 3 1l-23 59q1 18 20-7l30-57q10-21 4 0l-22 61q-2 16 19-2 27-35 29-12t-25 15q-3-20 20-21">
+         </path>
+         <g transform="translate(257 37) rotate(24)">
+          <rect height="85" rx="7" width="15">
+          </rect>
+          <path d="M0 85l7.5 17L15 85">
+          </path>
+          <path class="pen-shine" d="M5 14V70">
+          </path>
+         </g>
+        </svg>
+       </div>
+      </article>
+      <article class="project-card papers-card" data-category="research">
+       <div class="project-content">
+        <p class="project-category">
+         Bachelor thesis
+        </p>
+        <h3>
+         Finding Anchor Papers
+        </h3>
+        <p class="project-description">
+         Which papers shape a research field? My bachelor thesis combines LLM-based citation context analysis, citation graphs, and statistical models to identify influential anchor publications.
+        </p>
+        <a class="project-link" href="https://github.com/Avonik/A-Multi-Method-Approach-to-Identifying-Anchor-Papers-in-Research-Domains">
+         View on GitHub
+         <span aria-hidden="true">
+          &rsaquo;
+         </span>
+         <span class="sr-only">
+          : Finding Anchor Papers
+         </span>
+        </a>
+       </div>
+       <div aria-hidden="true" class="project-art">
+        <svg class="research-art papers-art" viewBox="0 0 360 170">
+         <path class="connections" d="M177 86L65 48M177 86L85 135M177 86L279 35M177 86L300 123M65 48L85 135M65 48L279 35M279 35L300 123M85 135L300 123">
+         </path>
+         <g class="nodes">
+          <circle cx="65" cy="48" r="7">
+          </circle>
+          <circle cx="85" cy="135" r="7">
+          </circle>
+          <circle cx="279" cy="35" r="7">
+          </circle>
+          <circle cx="300" cy="123" r="7">
+          </circle>
+         </g>
+         <circle class="halo" cx="177" cy="86" r="36">
+         </circle>
+         <rect class="paper" height="43" rx="4" width="31" x="162" y="64">
+         </rect>
+         <path class="paper-lines" d="M170 76h15m-15 8h15m-15 8h10">
+         </path>
+        </svg>
+       </div>
+      </article>
+      <article class="project-card parliament-card" data-category="research">
+       <div class="project-content">
+        <p class="project-category">
+         Hackathon &middot; document AI
+        </p>
+        <h3>
+         ParliParla
+        </h3>
+        <p class="project-description">
+         An Apertus-powered pipeline that turns Swiss parliamentary PDFs into a shared structured schema, with source quotes behind extracted values and evaluation across 18 parliaments. Submitted to the Hack Apertus hackathon in October 2026.
+        </p>
+        <a class="project-link" href="https://github.com/Avonik/ParliParla">
+         View on GitHub
+         <span aria-hidden="true">
+          &rsaquo;
+         </span>
+         <span class="sr-only">
+          : ParliParla
+         </span>
+        </a>
+       </div>
+       <div aria-hidden="true" class="project-art">
+        <svg class="research-art parliament-art" viewBox="0 0 360 170">
+         <path class="seats" d="M88 133a92 92 0 0 1 184 0M110 133a70 70 0 0 1 140 0M132 133a48 48 0 0 1 96 0">
+         </path>
+         <rect height="25" rx="5" width="34" x="163" y="116">
+         </rect>
+         <path class="speech" d="M239 34h57q8 0 8 8v28q0 8-8 8h-34l-13 11V78h-10q-8 0-8-8V42q0-8 8-8z">
+         </path>
+         <path class="paper-lines" d="M244 49h47m-47 13h31">
+         </path>
+        </svg>
+       </div>
+      </article>
+      <article class="project-card pdf-card" data-category="research">
+       <div class="project-content">
+        <p class="project-category">
+         University project &middot; LLMs
+        </p>
+        <h3>
+         PDFChat
+        </h3>
+        <p class="project-description">
+         A document chatbot built with Gradio and LangChain. Ask questions about uploaded PDFs, switch language models, and extract structured JSON summaries from sustainability reports.
+        </p>
+        <a class="project-link" href="https://github.com/Avonik/PDFChat">
+         View on GitHub
+         <span aria-hidden="true">
+          &rsaquo;
+         </span>
+         <span class="sr-only">
+          : PDFChat
+         </span>
+        </a>
+       </div>
+       <div aria-hidden="true" class="project-art">
+        <div class="pdf-art">
+         <div class="pdf-paper">
+          <span>
+           PDF
+          </span>
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+         </div>
+         <div class="chat-bubble">
+          Ask. Understand. Explore.
+          <span>
+           Answers grounded in your documents.
+          </span>
+         </div>
+        </div>
+       </div>
+      </article>
+      <article class="project-card patent-card" data-category="research">
+       <div class="project-content">
+        <p class="project-category">
+         Not yet public
+        </p>
+        <h3>
+         Multi-Agent Patent Novelty Assessment Pipeline
+        </h3>
+        <p class="project-description">
+         A multi-agent research pipeline for assessing patent novelty. Public access is on hold during an active journal submission.
+        </p>
+        <span class="release-note">
+         Public access on hold &middot; journal submission
+        </span>
+       </div>
+       <div aria-hidden="true" class="project-art">
+        <svg class="research-art patent-art" viewBox="0 0 360 170">
+         <path class="connections" d="M77 44H132Q150 44 150 62V85H232M77 85H232M77 126H132Q150 126 150 108V85">
+         </path>
+         <g class="nodes">
+          <circle cx="77" cy="44" r="10">
+          </circle>
+          <circle cx="77" cy="85" r="10">
+          </circle>
+          <circle cx="77" cy="126" r="10">
+          </circle>
+         </g>
+         <rect class="paper" height="65" rx="7" width="52" x="231" y="54">
+         </rect>
+         <path class="paper-lines" d="M242 72h29m-29 13h29m-29 13h18">
+         </path>
+        </svg>
+       </div>
+      </article>
+     </div>
     </div>
    </section>
    <section aria-labelledby="profile-title" class="profile-section section-shell" id="profile">
     <div class="section-heading">
      <p class="eyebrow">
-      THE PERSON BEHIND THE PROJECTS
+      A little about me
      </p>
      <h2 id="profile-title">
-      Curiosity is the starting point.
+      Curious by nature.
       <br/>
       <span>
-       Making it work is the good part.
+       Practical by design.
       </span>
      </h2>
     </div>
@@ -223,402 +549,13 @@
      </div>
     </div>
    </section>
-   <section aria-labelledby="projects-title" class="projects-section" id="projects">
-    <div class="section-shell">
-     <div class="projects-heading">
-      <div>
-       <p class="eyebrow">
-        IDEAS, MEET IMPLEMENTATION
-       </p>
-       <h2 id="projects-title">
-        Built to be useful.
-       </h2>
-       <p class="section-description">
-        A few experiments that became something more.
-       </p>
-      </div>
-      <a class="text-link" href="https://github.com/Avonik">
-       More on GitHub
-       <span aria-hidden="true">
-        &nearrow;
-       </span>
-      </a>
-     </div>
-     <div class="project-toolbar">
-      <div aria-label="Filter projects" class="project-filters" role="group">
-       <button aria-pressed="true" data-filter="all" type="button">
-        All work
-        <span>
-         8
-        </span>
-       </button>
-       <button aria-pressed="false" data-filter="live" type="button">
-        Live demos
-        <span>
-         3
-        </span>
-       </button>
-       <button aria-pressed="false" data-filter="research" type="button">
-        Research &amp; code
-        <span>
-         5
-        </span>
-       </button>
-      </div>
-      <p aria-live="polite" class="project-count">
-       8 projects to explore
-      </p>
-     </div>
-     <div class="project-grid">
-      <article class="project-card weather-card" data-category="live">
-       <div aria-hidden="true" class="project-art">
-        <div class="weather-art">
-         <span class="sun">
-         </span>
-         <span class="cloud cloud-one">
-         </span>
-         <span class="cloud cloud-two">
-         </span>
-         <svg viewbox="0 0 360 150">
-          <path d="M0 120 Q55 125 90 88 T180 82 T270 45 T360 22">
-          </path>
-          <path class="forecast" d="M0 135 Q55 140 90 109 T180 103 T270 65 T360 50">
-          </path>
-         </svg>
-         <span class="art-caption">
-          LOCAL DATA. CLEARER FORECASTS.
-         </span>
-        </div>
-       </div>
-       <div class="project-content">
-        <p class="project-category">
-         <span class="status-dot">
-         </span>
-         Live demo
-        </p>
-        <h3>
-         Weather Prediction
-        </h3>
-        <p class="project-description">
-         A fine-tuned weather model for L&uuml;neburg that outperforms professional weather models for local forecasts.
-        </p>
-        <a class="project-link" href="https://wetter.juhermes.de">
-         Explore project
-         <span aria-hidden="true">
-          &nearrow;
-         </span>
-         <span class="sr-only">
-          : Weather Prediction
-         </span>
-        </a>
-       </div>
-      </article>
-      <article class="project-card rail-card" data-category="live">
-       <div aria-hidden="true" class="project-art">
-        <div class="rail-art">
-         <div class="rail-line">
-         </div>
-         <span class="station station-one">
-         </span>
-         <span class="station station-two">
-         </span>
-         <span class="station station-three">
-         </span>
-         <div class="train">
-          <i>
-          </i>
-          <i>
-          </i>
-          <i>
-          </i>
-          <i>
-          </i>
-         </div>
-         <span class="route-label">
-          A smarter way from A to B.
-         </span>
-         <span class="route-a">
-          A
-         </span>
-         <span class="route-b">
-          B
-         </span>
-        </div>
-       </div>
-       <div class="project-content">
-        <p class="project-category">
-         <span class="status-dot">
-         </span>
-         Live demo
-        </p>
-        <h3>
-         OnPoint.
-        </h3>
-        <p class="project-description">
-         A route planner that tracks real train delays and ranks connections by expected journey time and transfer risk.
-        </p>
-        <a class="project-link" href="https://bahn.juhermes.de/">
-         Explore project
-         <span aria-hidden="true">
-          &nearrow;
-         </span>
-         <span class="sr-only">
-          : OnPoint.
-         </span>
-        </a>
-       </div>
-      </article>
-      <article class="project-card football-card" data-category="live">
-       <div aria-hidden="true" class="project-art">
-        <div class="football-art">
-         <div class="pitch">
-          <span>
-          </span>
-         </div>
-         <div class="probability">
-          <span>
-           Prediction, with perspective.
-          </span>
-          <div>
-           <i>
-           </i>
-           <i>
-           </i>
-           <i>
-           </i>
-          </div>
-          <small>
-           HOME &nbsp; / &nbsp; DRAW &nbsp; / &nbsp; AWAY
-          </small>
-         </div>
-        </div>
-       </div>
-       <div class="project-content">
-        <p class="project-category">
-         <span class="status-dot">
-         </span>
-         Live demo
-        </p>
-        <h3>
-         Football Forecast
-        </h3>
-        <p class="project-description">
-         A probabilistic model for predicting football games, built as a practical machine learning and uncertainty project.
-        </p>
-        <a class="project-link" href="https://spielraum.juhermes.de/">
-         Explore project
-         <span aria-hidden="true">
-          &nearrow;
-         </span>
-         <span class="sr-only">
-          : Football Forecast
-         </span>
-        </a>
-       </div>
-      </article>
-      <article class="project-card pen-card" data-category="research">
-       <div aria-hidden="true" class="project-art">
-        <svg class="research-art pen-art" viewbox="0 0 360 170">
-         <path class="guide" d="M40 128H320">
-         </path>
-         <path class="ink" d="M58 120l19-70-8 52q32-37 22 7t31-14q-24 41 5 22l35-62q12-30 3 1l-23 59q1 18 20-7l30-57q10-21 4 0l-22 61q-2 16 19-2 27-35 29-12t-25 15q-3-20 20-21">
-         </path>
-         <g transform="translate(257 37) rotate(24)">
-          <rect height="85" rx="7" width="15">
-          </rect>
-          <path d="M0 85l7.5 17L15 85">
-          </path>
-          <path class="pen-shine" d="M5 14V70">
-          </path>
-         </g>
-        </svg>
-       </div>
-       <div class="project-content">
-        <p class="project-category">
-         Hardware &amp; deep learning
-        </p>
-        <h3>
-         IMU Pen &mdash; Handwriting Recognition
-        </h3>
-        <p class="project-description">
-         Turning pen movements into words: a custom BLE pen streams IMU signals into a Conv&ndash;BiGRU&ndash;Transformer model with CTC decoding, without manually separating letters.
-        </p>
-        <a class="project-link" href="https://github.com/Avonik/word-prediction-via-motion-data">
-         View on GitHub
-         <span aria-hidden="true">
-          &nearrow;
-         </span>
-         <span class="sr-only">
-          : IMU Pen &mdash; Handwriting Recognition
-         </span>
-        </a>
-       </div>
-      </article>
-      <article class="project-card papers-card" data-category="research">
-       <div aria-hidden="true" class="project-art">
-        <svg class="research-art papers-art" viewbox="0 0 360 170">
-         <path class="connections" d="M177 86L65 48M177 86L85 135M177 86L279 35M177 86L300 123M65 48L85 135M65 48L279 35M279 35L300 123M85 135L300 123">
-         </path>
-         <g class="nodes">
-          <circle cx="65" cy="48" r="7">
-          </circle>
-          <circle cx="85" cy="135" r="7">
-          </circle>
-          <circle cx="279" cy="35" r="7">
-          </circle>
-          <circle cx="300" cy="123" r="7">
-          </circle>
-         </g>
-         <circle class="halo" cx="177" cy="86" r="36">
-         </circle>
-         <rect class="paper" height="43" rx="4" width="31" x="162" y="64">
-         </rect>
-         <path class="paper-lines" d="M170 76h15m-15 8h15m-15 8h10">
-         </path>
-        </svg>
-       </div>
-       <div class="project-content">
-        <p class="project-category">
-         Bachelor thesis
-        </p>
-        <h3>
-         Finding Anchor Papers
-        </h3>
-        <p class="project-description">
-         Which papers shape a research field? My bachelor thesis combines LLM-based citation context analysis, citation graphs, and statistical models to identify influential anchor publications.
-        </p>
-        <a class="project-link" href="https://github.com/Avonik/A-Multi-Method-Approach-to-Identifying-Anchor-Papers-in-Research-Domains">
-         View on GitHub
-         <span aria-hidden="true">
-          &nearrow;
-         </span>
-         <span class="sr-only">
-          : Finding Anchor Papers
-         </span>
-        </a>
-       </div>
-      </article>
-      <article class="project-card parliament-card" data-category="research">
-       <div aria-hidden="true" class="project-art">
-        <svg class="research-art parliament-art" viewbox="0 0 360 170">
-         <path class="seats" d="M88 133a92 92 0 0 1 184 0M110 133a70 70 0 0 1 140 0M132 133a48 48 0 0 1 96 0">
-         </path>
-         <rect height="25" rx="5" width="34" x="163" y="116">
-         </rect>
-         <path class="speech" d="M239 34h57q8 0 8 8v28q0 8-8 8h-34l-13 11V78h-10q-8 0-8-8V42q0-8 8-8z">
-         </path>
-         <path class="paper-lines" d="M244 49h47m-47 13h31">
-         </path>
-        </svg>
-       </div>
-       <div class="project-content">
-        <p class="project-category">
-         Hackathon &middot; document AI
-        </p>
-        <h3>
-         ParliParla
-        </h3>
-        <p class="project-description">
-         An Apertus-powered pipeline that turns Swiss parliamentary PDFs into a shared structured schema, with source quotes behind extracted values and evaluation across 18 parliaments. Submitted to the Hack Apertus hackathon in October 2026.
-        </p>
-        <a class="project-link" href="https://github.com/Avonik/ParliParla">
-         View on GitHub
-         <span aria-hidden="true">
-          &nearrow;
-         </span>
-         <span class="sr-only">
-          : ParliParla
-         </span>
-        </a>
-       </div>
-      </article>
-      <article class="project-card pdf-card" data-category="research">
-       <div aria-hidden="true" class="project-art">
-        <div class="pdf-art">
-         <div class="pdf-paper">
-          <span>
-           PDF
-          </span>
-          <i>
-          </i>
-          <i>
-          </i>
-          <i>
-          </i>
-         </div>
-         <div class="chat-bubble">
-          Ask. Understand. Explore.
-          <span>
-           Answers grounded in your documents.
-          </span>
-         </div>
-        </div>
-       </div>
-       <div class="project-content">
-        <p class="project-category">
-         University project &middot; LLMs
-        </p>
-        <h3>
-         PDFChat
-        </h3>
-        <p class="project-description">
-         A document chatbot built with Gradio and LangChain. Ask questions about uploaded PDFs, switch language models, and extract structured JSON summaries from sustainability reports.
-        </p>
-        <a class="project-link" href="https://github.com/Avonik/PDFChat">
-         View on GitHub
-         <span aria-hidden="true">
-          &nearrow;
-         </span>
-         <span class="sr-only">
-          : PDFChat
-         </span>
-        </a>
-       </div>
-      </article>
-      <article class="project-card patent-card" data-category="research">
-       <div aria-hidden="true" class="project-art">
-        <svg class="research-art patent-art" viewbox="0 0 360 170">
-         <path class="connections" d="M77 44H132Q150 44 150 62V85H232M77 85H232M77 126H132Q150 126 150 108V85">
-         </path>
-         <g class="nodes">
-          <circle cx="77" cy="44" r="10">
-          </circle>
-          <circle cx="77" cy="85" r="10">
-          </circle>
-          <circle cx="77" cy="126" r="10">
-          </circle>
-         </g>
-         <rect class="paper" height="65" rx="7" width="52" x="231" y="54">
-         </rect>
-         <path class="paper-lines" d="M242 72h29m-29 13h29m-29 13h18">
-         </path>
-        </svg>
-       </div>
-       <div class="project-content">
-        <p class="project-category">
-         Not yet public
-        </p>
-        <h3>
-         Multi-Agent Patent Novelty Assessment Pipeline
-        </h3>
-        <p class="project-description">
-         A multi-agent research pipeline for assessing patent novelty. Public access is on hold during an active journal submission.
-        </p>
-        <span class="release-note">
-         Public access on hold &middot; journal submission
-        </span>
-       </div>
-      </article>
-     </div>
-    </div>
-   </section>
    <section aria-labelledby="experience-title" class="experience-section" id="experience">
     <div class="section-heading">
      <p class="eyebrow">
-      Experience
+      The journey so far
      </p>
      <h2 id="experience-title">
-      Work, education, and volunteer work.
+      Always learning. Always building.
      </h2>
     </div>
     <div class="experience-stack">
@@ -748,11 +685,8 @@
     </article>
    </section>
    <section aria-labelledby="contact-title" class="contact-section section-shell" id="contact">
-    <div aria-hidden="true" class="contact-symbol">
-     &nearrow;
-    </div>
     <p class="eyebrow">
-     GOOD THINGS START WITH A CONVERSATION
+     Let&rsquo;s make something useful.
     </p>
     <h2 id="contact-title">
      What could we
