@@ -51,34 +51,55 @@ h1 { font-size: clamp(2.625rem, 5.4vw, 4.25rem); font-weight: 650; letter-spacin
 .button-outline:hover { background: #0071e3; color: white; }
 .text-link { display: inline-flex; align-items: center; gap: 8px; color: var(--blue); font-size: 1rem; }
 .text-link:hover, .project-link:hover, .email-link:hover { text-decoration: underline; }
-.project-stage { position: relative; width: min(100%, 1040px); height: 360px; margin: 32px auto 0; isolation: isolate; }
-.stage-weather { z-index: 3; width: 600px; left: calc(50% - 300px); top: 0; }
-.stage-rail { width: 260px; height: 290px; left: 0; top: 55px; transform: rotate(-7deg); }
-.stage-football { z-index: 2; width: 360px; height: 270px; right: -10px; top: 75px; transform: rotate(7deg); }
-.stage-caption { color: var(--muted); font-size: 0.8125rem; margin: 20px 0 20px; }
 .hero-footnote { display: flex; justify-content: center; gap: 32px; padding: 17px 0; font-size: 0.6875rem; color: #727278; }
 .hero-footnote span + span::before { content: "·"; position: relative; left: -16px; }
-.stage-card { position: absolute; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 50px -22px #20304b45, inset 0 1px 0 #ffffffb3; }
-.stage-card-heading { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 7px; text-align: left; padding: 27px 29px 0; }
-.stage-card-heading span { font-size: .64rem; letter-spacing: .01em; color: #5f7691; }
-.stage-card-heading strong { font-size: 1.5rem; font-weight: 600; letter-spacing: -.035em; line-height: 1.15; }
-.stage-card img { position: absolute; width: 100%; height: auto; max-width: none; left: 0; bottom: -12px; }
-.stage-weather { background: linear-gradient(150deg, #f4f9ff, #d9e7f8); height: 350px; }
-.stage-weather img { width: 86%; left: 7%; bottom: -28px; }
-.stage-rail { background: #101820; color: #f5f5f7; }
-.stage-rail .stage-card-heading span { color: #9bacbb; }
-.stage-rail .stage-card-heading { padding-inline: 24px; }
-.stage-rail .stage-card-heading strong { font-size: 1.375rem; }
-.stage-rail img { width: 150%; left: -25%; bottom: 0; }
-.stage-football { background: linear-gradient(150deg, #f0f5ee, #d9e7d9); }
-.stage-football .stage-card-heading { padding-inline: 24px; align-items: flex-end; text-align: right; }
-.stage-football .stage-card-heading span { color: #697c69; }
-.stage-football .stage-card-heading strong { font-size: 1.375rem; }
-.stage-football img { width: 95%; left: 5%; bottom: -40px; }
 .project-illustration { width: 100%; height: 270px; object-fit: contain; }
 .weather-card .project-illustration { transform: scale(1.1); transform-origin: center bottom; }
 .rail-card .project-illustration { transform: scale(1.17); transform-origin: center bottom; }
 .football-card .project-illustration { transform: scale(1.05); transform-origin: center bottom; }
+/* The three-card fan follows a slow orbit; JavaScript updates only transform and opacity. */
+.project-carousel { position: relative; }
+.project-stage { position: relative; width: min(100%, 1040px); height: 360px; margin: 32px auto 0; isolation: isolate; }
+.stage-card { position: absolute; left: 50%; top: 0; width: 600px; height: 350px; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 50px -22px #20304b45, inset 0 1px 0 #ffffffb3; transform-origin: 50% 0; opacity: 0; pointer-events: none; }
+.stage-card[data-slot="left"] { opacity: 1; z-index: 2; transform: translate3d(calc(-50% - 350px), 58px, 0) rotate(-7deg) scale(.6); }
+.stage-card[data-slot="center"] { opacity: 1; z-index: 3; transform: translate3d(-50%, 0, 0); }
+.stage-card[data-slot="right"] { opacity: 1; z-index: 2; transform: translate3d(calc(-50% + 350px), 58px, 0) rotate(7deg) scale(.6); }
+.stage-card-heading { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 7px; text-align: left; padding: 27px 29px 0; }
+.stage-card-heading span { font-size: .64rem; letter-spacing: .01em; color: #6a7484; }
+.stage-card-heading strong { font-size: 1.5rem; font-weight: 600; letter-spacing: -.035em; line-height: 1.15; }
+.stage-card[data-position="right"] .stage-card-heading { align-items: flex-end; text-align: right; }
+.stage-card[data-project="weather"] { background: linear-gradient(150deg, #f4f9ff, #d9e7f8); }
+.stage-card[data-project="rail"] { background: #101820; color: #f5f5f7; }
+.stage-card[data-project="rail"] .stage-card-heading span { color: #9bacbb; }
+.stage-card[data-project="football"] { background: linear-gradient(150deg, #f0f5ee, #d9e7d9); }
+.stage-card[data-project="pen"] { background: #eceef7; }
+.stage-card[data-project="papers"] { background: #f0ebf6; }
+.stage-card[data-project="parliament"] { background: #f5f0e7; }
+.stage-card[data-project="pdf"] { background: #f4ecf1; }
+.stage-card[data-project="patent"] { background: #eaf0f2; }
+.carousel-art { position: absolute; inset: auto 0 -8px; height: 280px; display: flex; align-items: center; justify-content: center; }
+.carousel-art > img { width: 90%; height: 100%; object-fit: contain; }
+.carousel-art .research-art { width: 90%; height: 100%; padding: 25px 35px; }
+.carousel-art .pdf-art { width: 90%; height: 100%; }
+.carousel-controls { display: flex; align-items: center; justify-content: center; gap: 9px; margin: 14px 0 8px; }
+.carousel-controls[hidden] { display: none; }
+.carousel-step { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 0; border-radius: 50%; background: #e8e8ed; color: #626269; font-size: 1.625rem; line-height: 1; }
+.carousel-step:hover { background: #dedee5; color: #1d1d1f; }
+.carousel-position { font-size: .6875rem; font-variant-numeric: tabular-nums; letter-spacing: .04em; color: #777780; min-width: 50px; }
+.carousel-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 36px; min-width: 79px; border: 0; border-radius: 100px; background: transparent; color: #626269; font-size: .6875rem; }
+.carousel-toggle:hover { background: #e8e8ed; }
+.carousel-toggle:disabled { cursor: default; color: #777780; }
+.carousel-pause-icon { width: 8px; height: 10px; border-inline: 2px solid currentColor; }
+.carousel-toggle[aria-pressed="true"] .carousel-pause-icon { width: 0; height: 0; border: 5px solid transparent; border-right: 0; border-left: 7px solid currentColor; }
+.nav-contact > span[aria-hidden], .contact-section .button > span[aria-hidden] { font-size: 1.3125rem; line-height: 1; }
+/* Readable CV hierarchy at every screen size. */
+.experience-section .experience-group-heading h3 { font-size: 1.1875rem; font-weight: 600; line-height: 1.3; color: #45454c; letter-spacing: -.015em; }
+.experience-section .timeline-item h3 { font-size: 1.4375rem; line-height: 1.3; }
+.experience-section .timeline-date { font-size: .875rem; }
+.experience-section .timeline-meta { font-size: 1rem !important; line-height: 1.5; }
+.experience-section .eyebrow { font-size: 1.1875rem; }
+.experience-section h2 { font-size: clamp(2.375rem, 4.2vw, 3.375rem); }
+
 /* Store-inspired project tiles: one surface, clear hierarchy, generous imagery. */
 .projects-section { background: var(--surface); padding: 86px 0 96px; border-top: 12px solid white; }
 .projects-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; }
@@ -181,10 +202,6 @@ h2 span { color: var(--muted); }
 .site-footer div { display: flex; gap: 22px; }
 .footer-note { color: #86868b; }
 @media (max-width: 1050px) {
-  .project-stage { width: 880px; max-width: calc(100% + 24px); }
-  .stage-rail { left: -20px; width: 230px; }
-  .stage-football { right: -25px; width: 320px; }
-  .stage-weather { width: 600px; left: calc(50% - 300px); }
   .project-grid { gap: 20px; }
   .project-content { padding: 26px 24px 0; }
   .project-card h3 { font-size: 1.5rem; }
@@ -194,16 +211,15 @@ h2 span { color: var(--muted); }
   .profile-layout { gap: 50px; }
 }
 @media (max-width: 800px) {
+  .project-stage { height: 330px; }
+  .stage-card { width: 510px; height: 320px; }
+  .carousel-art { height: 250px; }
+
   .section-shell { padding-inline: 28px; }
   .header-inner { padding-inline: 24px; gap: 20px; }
   nav { gap: 24px; }
   .hero { padding-top: 48px; }
   .hero-copy { font-size: 1.25rem; }
-  .project-stage { height: 330px; }
-  .stage-weather { height: 320px; }
-  .stage-weather { width: 510px; left: calc(50% - 255px); }
-  .stage-rail { width: 200px; height: 265px; top: 45px; }
-  .stage-football { width: 280px; height: 240px; top: 65px; }
   .hero-footnote { gap: 24px; font-size: 0.625rem; }
   .hero-footnote span + span::before { left: -12px; }
   .project-card[data-category="live"] { grid-column: span 3; }
@@ -225,6 +241,21 @@ h2 span { color: var(--muted); }
   .footer-note { display: none; }
 }
 @media (max-width: 600px) {
+  .project-stage { height: 245px; width: calc(100% + 24px); margin: 36px -12px 0; }
+  .stage-card { width: 76%; height: 230px; border-radius: 13px; }
+  .stage-card-heading { padding: 18px 18px 0; gap: 5px; }
+  .stage-card-heading span { font-size: .5rem; }
+  .stage-card-heading strong { font-size: 1rem; }
+  .carousel-art { height: 180px; bottom: -4px; }
+  .carousel-art > img { width: 100%; }
+  .carousel-art .research-art { padding: 10px; }
+  .carousel-art .pdf-art { gap: 10px; transform: scale(.8); width: 120%; flex: none; }
+  .carousel-controls { margin-block: 7px; gap: 7px; }
+  .carousel-step { width: 44px; height: 44px; }
+  .carousel-toggle { min-height: 44px; }
+  .experience-section .timeline-item h3 { font-size: 1.375rem; }
+  .experience-section .experience-group-heading h3 { font-size: 1.1875rem; }
+
   html { scroll-padding-top: 4.5rem; }
   .section-shell { padding-inline: 22px; }
   .header-inner { min-height: 52px; padding-inline: 18px; gap: 12px; }
@@ -239,23 +270,7 @@ h2 span { color: var(--muted); }
   .hero-copy { font-size: 1.0625rem; line-height: 1.45; }
   .hero-actions { gap: 11px; margin-top: 24px; }
   .button { font-size: 0.875rem; padding: 11px 18px; }
-  .project-stage { height: 245px; width: calc(100% + 24px); max-width: none; margin: 42px -12px 0; }
-  .stage-weather { width: min(76%, 390px); left: 12%; border-radius: 10px; top: 0; }
-  .stage-rail { left: -13px; width: 130px; height: 170px; top: 50px; border-radius: 9px; }
-  .stage-football { right: -15px; width: 175px; height: 155px; top: 65px; border-radius: 9px; }
-  .stage-card { border-radius: 13px; }
-  .stage-card-heading { padding: 18px 18px 0; gap: 5px; }
-  .stage-card-heading span { font-size: .5rem; }
-  .stage-card-heading strong { font-size: 1rem; }
-  .stage-weather { height: 230px; }
-  .stage-weather img { width: 100%; left: 0; bottom: -22px; }
-  .stage-rail .stage-card-heading, .stage-football .stage-card-heading { padding: 16px 13px 0; }
-  .stage-rail .stage-card-heading strong, .stage-football .stage-card-heading strong { font-size: .8rem; }
-  .stage-rail .stage-card-heading span, .stage-football .stage-card-heading span { display: none; }
-  .stage-rail img { bottom: 4px; }
-  .stage-football img { width: 120%; left: 20%; bottom: -10px; }
   .project-illustration { height: 245px; }
-  .stage-caption { font-size: 0.6875rem; margin: 7px 0 23px; }
   .hero-footnote { gap: 6px 20px; flex-wrap: wrap; font-size: 0.625rem; line-height: 1.5; padding-block: 15px 18px; }
   .hero-footnote span:last-child { flex-basis: 100%; }
   .hero-footnote span + span::before { left: -10px; }
@@ -310,7 +325,6 @@ h2 span { color: var(--muted); }
 }
 @media (max-width: 380px) {
   .mobile-break { display: block; }
-  .project-stage { height: 245px; }
   .hero-copy { font-size: 1rem; }
   .project-filters button { padding-inline: 6px; font-size: 0.625rem; }
   .project-filters button span { display: none; }

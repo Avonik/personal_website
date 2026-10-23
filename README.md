@@ -31,7 +31,7 @@ The preview is a separate static snapshot at `/var/www/designs.juhermes.de`, ser
 To update after editing this branch:
 
 ```sh
-sudo rsync -a --delete --exclude='.git' --exclude='.git/' --exclude='README.md' ./ /var/www/designs.juhermes.de/
+sudo rsync -a --delete --exclude='.git' --exclude='.git/' --exclude='README.md' --exclude='tests/' ./ /var/www/designs.juhermes.de/
 ```
 
 Only run that command from this branch’s checkout. To retire the preview, remove its Cloudflare DNS/ingress entry and its Nginx site, test Nginx configuration, then reload Nginx and restart cloudflared. Do not change the production site configuration.
@@ -39,3 +39,15 @@ Only run that command from this branch’s checkout. To retire the preview, remo
 ## Validation
 
 Browser checks cover desktop and phone layouts, all three project filters, valid section navigation, no missing images, and no console errors. Static checks cover JavaScript syntax, section anchors, duplicate IDs, and asset references.
+
+## Project carousel
+
+The hero keeps three overlapping cards in view while all eight projects follow a slow orbit, passing the centre every twelve seconds. It pauses on hover or keyboard focus, has explicit pause and previous/next controls, and suspends updates when offscreen or in a background tab. Reduced-motion preferences disable autoplay and make manual navigation immediate. Manual navigation uses a critically damped spring and remains interruptible.
+
+Run the carousel behavior checks with:
+
+```sh
+node tests/carousel.test.cjs
+```
+
+These cover autoplay, pausing, manual stepping, rapid retargeting, hidden/offscreen suspension, and changes to motion preferences.

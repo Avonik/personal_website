@@ -7,8 +7,8 @@
   <filter id="shadow" x="-40%" y="-50%" width="200%" height="250%"><feDropShadow dx="0" dy="22" stdDeviation="17" flood-color="#000" flood-opacity=".38"/></filter>
  </defs>
  <ellipse cx="329" cy="209" rx="245" ry="165" fill="url(#light)"/>
- <path d="M-20 345L626 158M-20 357L626 170" stroke="url(#track)" stroke-width="2"/>
- <g transform="translate(77 93) rotate(-16 220 110)" filter="url(#shadow)">
+ <path d="M-20 279H626M-20 291H626" stroke="url(#track)" stroke-width="2"/>
+ <g transform="translate(28 55) scale(1.18)" filter="url(#shadow)">
   <path d="M21 93c0-12 10-22 22-22h288c31 0 57 12 78 36l36 42c10 12 3 30-14 30H21V93Z" fill="url(#body)"/>
   <path d="M45 72h282c30 0 56 12 77 34" stroke="white" stroke-width="2" stroke-linecap="round"/>
   <path d="M21 151h398l18 11H21Z" fill="#b75d59"/>
@@ -16,6 +16,6 @@
   <path d="M348 93c18 5 32 15 45 30l8 9h-48c-3 0-5-2-5-5V93Z" fill="url(#glass)"/>
   <path d="M21 177h410" stroke="#8a9aa8" stroke-width="3"/>
  </g>
- <circle cx="77" cy="317" r="6" fill="#101820" stroke="#8aaabd" stroke-width="2"/>
- <circle cx="526" cy="187" r="6" fill="#101820" stroke="#8aaabd" stroke-width="2"/>
+ <circle cx="77" cy="285" r="6" fill="#101820" stroke="#8aaabd" stroke-width="2"/>
+ <circle cx="526" cy="285" r="6" fill="#101820" stroke="#8aaabd" stroke-width="2"/>
 </svg>
