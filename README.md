@@ -19,8 +19,8 @@ Studied Apple’s homepage and online Store on 23 October 2026. The refinement u
 ## Design and content
 
 - System typography, restrained blue accents, translucent sticky navigation, immediate press feedback, and responsive illustrated project cards.
-- All eight existing projects, CV entries, awards, and contact links are retained. Content and illustrations are in `index.html`; filtering is in `assets/js/main.js`; styles are in `assets/css/styles.css`.
-- Projects remain readable without JavaScript. Filters use native keyboard-operable buttons and announce counts to screen readers.
+- All eight existing projects, CV entries, awards, and contact links are retained. Content and illustrations are in `index.html`; carousel interaction is in `assets/js/main.js`; styles are in `assets/css/styles.css`.
+- Projects remain readable without JavaScript. Projects are grouped into live tools/upcoming work and research/engineering on GitHub, each with a short explanation.
 - Reduced motion, transparency, and increased contrast preferences have dedicated CSS treatments.
 - The preview contains `noindex, nofollow` in its HTML and an `X-Robots-Tag` response header. Remove these preview restrictions if promoting to production.
 
@@ -38,16 +38,18 @@ Only run that command from this branch’s checkout. To retire the preview, remo
 
 ## Validation
 
-Browser checks cover desktop and phone layouts, all three project filters, valid section navigation, no missing images, and no console errors. Static checks cover JavaScript syntax, section anchors, duplicate IDs, and asset references.
+Browser checks cover desktop and phone layouts, the draggable carousel, valid section navigation, no missing images, and no console errors. Static checks cover JavaScript syntax, section anchors, duplicate IDs, and asset references.
 
 ## Project carousel
 
-The hero keeps three overlapping cards in view while all eight projects follow a slow orbit, passing the centre every ten seconds. It pauses on hover or keyboard focus, has explicit pause and previous/next controls, and suspends updates when offscreen or in a background tab. Reduced-motion preferences disable autoplay and make manual navigation immediate. Manual navigation uses a critically damped spring and remains interruptible.
+Three overlapping cards cycle through all eight projects, with one step taking about 8.33 seconds. Two complete stacking orders crossfade around the foreground handoff, avoiding an opaque z-index switch. Headings stay aligned throughout movement.
 
-Run the carousel behavior checks with:
+Drag with mouse or touch, scroll sideways on a trackpad, or use Shift+wheel. Horizontal gestures move the cards directly, then settle with momentum and an interruptible spring. Vertical swipes and ordinary vertical wheel input preserve page scrolling. The focusable carousel also supports left/right arrows and Space to pause or resume, with no visible navigation buttons.
+
+Autoplay pauses during interaction and suspends while offscreen or in a background tab. Reduced-motion preferences disable autoplay and spring-based settling.
 
 ```sh
 node tests/carousel.test.cjs
 ```
 
-These cover autoplay, pausing, manual stepping, rapid retargeting, hidden/offscreen suspension, and changes to motion preferences.
+Checks cover speed, continuous layer blending, direct dragging, release momentum, interrupted movement, wheel handling, keyboard navigation, motion preferences, and background/offscreen suspension.
