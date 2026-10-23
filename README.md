@@ -14,7 +14,7 @@ Open http://127.0.0.1:8093. No build, dependency installation, or external font 
 
 ## Second design pass
 
-Studied Apple’s homepage and online Store on 23 October 2026. The refinement uses a compact navigation bar, a short centered introduction with paired calls to action, actual app screenshots, continuous project tile surfaces, larger body text, and alternating light/dark project treatments. Apple screenshots are reference material only; no Apple product imagery is used in the site. Project screenshots are static interface previews, captured on that date.
+Studied Apple’s homepage and online Store on 23 October 2026. The refinement uses a compact navigation bar, a short centered introduction with paired calls to action, custom project illustrations, continuous project tile surfaces, larger body text, and alternating light/dark project treatments. Apple screenshots are reference material only; no Apple product imagery is used in the site. The hero and live project cards share original SVG illustrations for weather, rail, and football, with a consistent palette, lighting, and level of detail. They are conceptual illustrations and contain no live readings or app screenshots.
 
 ## Design and content
 

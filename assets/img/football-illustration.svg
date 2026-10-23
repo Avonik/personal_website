@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="420" viewBox="0 0 600 420" fill="none">
+ <defs>
+  <radialGradient id="ball" cx=".32" cy=".22" r=".85"><stop stop-color="#fff"/><stop offset=".55" stop-color="#f5f7f3"/><stop offset="1" stop-color="#b8c8b8"/></radialGradient>
+  <linearGradient id="panel" x1="260" y1="80" x2="370" y2="260" gradientUnits="userSpaceOnUse"><stop stop-color="#74887a"/><stop offset="1" stop-color="#3e5b49"/></linearGradient>
+  <linearGradient id="pitch" x1="300" y1="240" x2="300" y2="390" gradientUnits="userSpaceOnUse"><stop stop-color="#9eb9a2" stop-opacity=".25"/><stop offset="1" stop-color="#9eb9a2" stop-opacity="0"/></linearGradient>
+  <clipPath id="edge"><circle cx="310" cy="177" r="103"/></clipPath>
+  <filter id="blur"><feGaussianBlur stdDeviation="13"/></filter>
+ </defs>
+ <ellipse cx="314" cy="300" rx="103" ry="18" fill="#5f8066" opacity=".18" filter="url(#blur)"/>
+ <g transform="translate(0 14)">
+  <path d="M110 300L225 244H453L528 300L411 365H183Z" fill="url(#pitch)"/>
+  <path d="M110 300L225 244H453L528 300L411 365H183Z" stroke="#a9bfae" stroke-opacity=".6"/>
+  <path d="M294 244L306 365M135 287L169 309L210 288L181 266M494 275L449 300L483 325" stroke="#a9bfae" stroke-opacity=".7"/>
+  <ellipse cx="300" cy="300" rx="37" ry="19" stroke="#a9bfae" stroke-opacity=".7"/>
+ </g>
+ <circle cx="310" cy="177" r="103" fill="url(#ball)"/>
+ <g clip-path="url(#edge)">
+  <path d="M291 131L335 135L353 174L319 203L278 178Z" fill="url(#panel)"/>
+  <path d="M229 88L262 88L272 108L254 136L222 126ZM369 83L404 115L397 142L369 143L352 111ZM389 218L419 201L425 231L399 266L372 254ZM245 224L275 232L281 264L254 286L218 257Z" fill="url(#panel)"/>
+  <path d="M291 131L272 108M335 135L352 111M353 174L397 142M319 203L329 244L372 254M278 178L244 184L245 224M244 184L222 126M329 244L281 264" stroke="#b9c5b7" stroke-width="1.8"/>
+  <path d="M218 257L199 196L244 184M404 115L422 166L397 142M275 232L278 178M389 218L353 174" stroke="#b9c5b7" stroke-width="1.5"/>
+ </g>
+ <circle cx="310" cy="177" r="102.5" stroke="#fff" stroke-opacity=".5"/>
+ <g transform="translate(199 365)">
+  <rect width="91" height="8" rx="4" fill="#698e73"/>
+  <rect x="97" width="45" height="8" rx="4" fill="#a6bfaa"/>
+  <rect x="148" width="60" height="8" rx="4" fill="#c5d6c7"/>
+ </g>
+</svg>
