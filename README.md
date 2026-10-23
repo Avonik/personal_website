@@ -42,7 +42,7 @@ Browser checks cover desktop and phone layouts, all three project filters, valid
 
 ## Project carousel
 
-The hero keeps three overlapping cards in view while all eight projects follow a slow orbit, passing the centre every twelve seconds. It pauses on hover or keyboard focus, has explicit pause and previous/next controls, and suspends updates when offscreen or in a background tab. Reduced-motion preferences disable autoplay and make manual navigation immediate. Manual navigation uses a critically damped spring and remains interruptible.
+The hero keeps three overlapping cards in view while all eight projects follow a slow orbit, passing the centre every ten seconds. It pauses on hover or keyboard focus, has explicit pause and previous/next controls, and suspends updates when offscreen or in a background tab. Reduced-motion preferences disable autoplay and make manual navigation immediate. Manual navigation uses a critically damped spring and remains interruptible.
 
 Run the carousel behavior checks with:
 

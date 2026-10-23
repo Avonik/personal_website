@@ -83,7 +83,7 @@ if (year) year.textContent = new Date().getFullYear();
         holdUntil = time + 2000;
       }
     } else if (canRotate() && time >= holdUntil) {
-      velocity = 1 / 12; // One project passes the centre every twelve seconds.
+      velocity = 1 / 10; // One project passes the centre every ten seconds.
       position += velocity * dt;
     } else {
       velocity = 0;
