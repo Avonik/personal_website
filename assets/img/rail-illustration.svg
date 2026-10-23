@@ -1,21 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="420" viewBox="0 0 600 420" fill="none">
  <defs>
-  <linearGradient id="body" x1="240" y1="100" x2="240" y2="255" gradientUnits="userSpaceOnUse"><stop stop-color="#fff" /><stop offset=".5" stop-color="#eff2f4" /><stop offset="1" stop-color="#b4bfc9" /></linearGradient>
-  <linearGradient id="glass" x1="260" y1="130" x2="260" y2="210" gradientUnits="userSpaceOnUse"><stop stop-color="#243444" /><stop offset="1" stop-color="#60798c" /></linearGradient>
-  <linearGradient id="track" x1="40" y1="340" x2="550" y2="170" gradientUnits="userSpaceOnUse"><stop stop-color="#536b7d" stop-opacity="0" /><stop offset=".4" stop-color="#88a8bd" /><stop offset="1" stop-color="#7793ab" stop-opacity="0" /></linearGradient>
-  <radialGradient id="light"><stop stop-color="#71899b" stop-opacity=".18" /><stop offset="1" stop-color="#71899b" stop-opacity="0" /></radialGradient>
-  <filter id="shadow" x="-40%" y="-50%" width="200%" height="250%"><feDropShadow dx="0" dy="22" stdDeviation="17" flood-color="#000" flood-opacity=".38" /></filter>
+  <linearGradient id="body" x1="240" y1="100" x2="240" y2="255" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset=".5" stop-color="#eff2f4"/><stop offset="1" stop-color="#b4bfc9"/></linearGradient>
+  <linearGradient id="glass" x1="260" y1="130" x2="260" y2="210" gradientUnits="userSpaceOnUse"><stop stop-color="#243444"/><stop offset="1" stop-color="#60798c"/></linearGradient>
+  <linearGradient id="track" x1="40" y1="340" x2="550" y2="170" gradientUnits="userSpaceOnUse"><stop stop-color="#536b7d" stop-opacity="0"/><stop offset=".4" stop-color="#88a8bd"/><stop offset="1" stop-color="#7793ab" stop-opacity="0"/></linearGradient>
+  <radialGradient id="light"><stop stop-color="#71899b" stop-opacity=".18"/><stop offset="1" stop-color="#71899b" stop-opacity="0"/></radialGradient>
+  <filter id="shadow" x="-40%" y="-50%" width="200%" height="250%"><feDropShadow dx="0" dy="22" stdDeviation="17" flood-color="#000" flood-opacity=".38"/></filter>
  </defs>
- <ellipse cx="329" cy="209" rx="245" ry="165" fill="url(#light)" />
- <path d="M-20 279H626M-20 291H626" stroke="url(#track)" stroke-width="2" />
- <g class="art-rail-scenery" stroke="#8aaabd" stroke-width="2" opacity=".3"><path d="M-48 307H672" stroke-dasharray="16 32" /></g><g transform="translate(28 55) scale(1.18)" filter="url(#shadow)">
-  <path d="M21 93c0-12 10-22 22-22h288c31 0 57 12 78 36l36 42c10 12 3 30-14 30H21V93Z" fill="url(#body)" />
-  <path d="M45 72h282c30 0 56 12 77 34" stroke="white" stroke-width="2" stroke-linecap="round" />
-  <path d="M21 151h398l18 11H21Z" fill="#b75d59" />
-  <path d="M42 91h29a4 4 0 0 1 4 4v29a4 4 0 0 1-4 4H42a4 4 0 0 1-4-4V95a4 4 0 0 1 4-4ZM92 91h29a4 4 0 0 1 4 4v29a4 4 0 0 1-4 4H92a4 4 0 0 1-4-4V95a4 4 0 0 1 4-4ZM142 91h29a4 4 0 0 1 4 4v29a4 4 0 0 1-4 4h-29a4 4 0 0 1-4-4V95a4 4 0 0 1 4-4ZM192 91h29a4 4 0 0 1 4 4v29a4 4 0 0 1-4 4h-29a4 4 0 0 1-4-4V95a4 4 0 0 1 4-4ZM242 91h29a4 4 0 0 1 4 4v29a4 4 0 0 1-4 4h-29a4 4 0 0 1-4-4V95a4 4 0 0 1 4-4ZM292 91h31a4 4 0 0 1 4 4v29a4 4 0 0 1-4 4h-31a4 4 0 0 1-4-4V95a4 4 0 0 1 4-4Z" fill="url(#glass)" />
-  <path d="M348 93c18 5 32 15 45 30l8 9h-48c-3 0-5-2-5-5V93Z" fill="url(#glass)" />
-  <path d="M21 177h410" stroke="#8a9aa8" stroke-width="3" />
+ <ellipse cx="329" cy="209" rx="245" ry="165" fill="url(#light)"/>
+ <path d="M-20 279H626M-20 291H626" stroke="url(#track)" stroke-width="2"/>
+ <g transform="translate(28 55) scale(1.18)" filter="url(#shadow)">
+  <path d="M21 93c0-12 10-22 22-22h288c31 0 57 12 78 36l36 42c10 12 3 30-14 30H21V93Z" fill="url(#body)"/>
+  <path d="M45 72h282c30 0 56 12 77 34" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  <path d="M21 151h398l18 11H21Z" fill="#b75d59"/>
+  <path d="M42 91h29a4 4 0 0 1 4 4v29a4 4 0 0 1-4 4H42a4 4 0 0 1-4-4V95a4 4 0 0 1 4-4ZM92 91h29a4 4 0 0 1 4 4v29a4 4 0 0 1-4 4H92a4 4 0 0 1-4-4V95a4 4 0 0 1 4-4ZM142 91h29a4 4 0 0 1 4 4v29a4 4 0 0 1-4 4h-29a4 4 0 0 1-4-4V95a4 4 0 0 1 4-4ZM192 91h29a4 4 0 0 1 4 4v29a4 4 0 0 1-4 4h-29a4 4 0 0 1-4-4V95a4 4 0 0 1 4-4ZM242 91h29a4 4 0 0 1 4 4v29a4 4 0 0 1-4 4h-29a4 4 0 0 1-4-4V95a4 4 0 0 1 4-4ZM292 91h31a4 4 0 0 1 4 4v29a4 4 0 0 1-4 4h-31a4 4 0 0 1-4-4V95a4 4 0 0 1 4-4Z" fill="url(#glass)"/>
+  <path d="M348 93c18 5 32 15 45 30l8 9h-48c-3 0-5-2-5-5V93Z" fill="url(#glass)"/>
+  <path d="M21 177h410" stroke="#8a9aa8" stroke-width="3"/>
  </g>
- <circle cx="77" cy="285" r="6" fill="#101820" stroke="#8aaabd" stroke-width="2" />
- <circle cx="526" cy="285" r="6" fill="#101820" stroke="#8aaabd" stroke-width="2" />
+ <circle cx="77" cy="285" r="6" fill="#101820" stroke="#8aaabd" stroke-width="2"/>
+ <circle cx="526" cy="285" r="6" fill="#101820" stroke="#8aaabd" stroke-width="2"/>
 </svg>

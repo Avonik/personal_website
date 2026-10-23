@@ -59,8 +59,6 @@ if (year) year.textContent = new Date().getFullYear();
         slide.style.opacity = opacity.toFixed(4);
         slide.style.zIndex = String(100 - orderDistance * 10);
         slide.style.visibility = opacity < .001 ? 'hidden' : 'visible';
-        const artworkVisible = String(opacity > .05);
-        if (slide.dataset.artVisible !== artworkVisible) slide.dataset.artVisible = artworkVisible;
         if (!layerIndex) slide.setAttribute('aria-hidden', String(absolute > 1.2));
       });
     });
